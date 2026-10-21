@@ -4,11 +4,10 @@ import Constants from 'expo-constants';
 import { useCallback, useEffect, useState } from 'react';
 import { Platform } from 'react-native';
 
-import { Btn, Card, Choice, Field, Row, Screen, T } from '@/components/ui';
+import { Btn, Card, Field, LanguageSelector, Row, Screen, T } from '@/components/ui';
 import { useT } from '@/lib/i18n';
 import { STORAGE_ENGINE } from '@/lib/storage';
 import { actions, useApp } from '@/lib/store';
-import type { Lang } from '@/lib/engine';
 import { useModelInstall } from '@models/stt';
 
 const mb = (bytes: number) => Math.round(bytes / 2 ** 20);
@@ -81,15 +80,7 @@ export default function Settings() {
   return (
     <Screen title={t('settings')}>
       <Card>
-        <Choice<Lang>
-          label={t('language')}
-          value={app.lang}
-          onChange={(lang) => actions.setSettings({ lang })}
-          options={[
-            ['en', 'ENGLISH'],
-            ['hi', 'हिन्दी'],
-          ]}
-        />
+        <LanguageSelector label={t('language')} />
       </Card>
 
       <Card>

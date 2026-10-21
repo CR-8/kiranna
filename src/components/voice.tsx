@@ -1,9 +1,8 @@
 import { useRouter } from 'expo-router';
 import { useCallback, useState, type ReactNode } from 'react';
-import { Platform, Pressable } from 'react-native';
+import { Platform } from 'react-native';
 
-import { Btn, Card, MicIcon, T } from '@/components/ui';
-import { C, R } from '@/constants/theme';
+import { Btn, Card, T, type MicState } from '@/components/ui';
 import { useT } from '@/lib/i18n';
 import { HINGLISH_SWIFT, totalDownloadBytes, useVoiceCommand, type STTResult, type VoiceCommandState } from '@models/stt';
 
@@ -27,39 +26,13 @@ export function useVoiceInput(onTranscript: (result: STTResult) => void) {
   return { ...voice, toggle, busy, webNote };
 }
 
-export function voiceButtonLabel(t: ReturnType<typeof useT>, state: VoiceCommandState, idleLabel: string) {
-  if (state.status === 'listening') return t('listening');
-  if (state.status === 'processing') return t('processing');
-  return idleLabel;
-}
-
-/** The large mic control used on the bill screen. */
-export function VoiceButton({ voice }: { voice: ReturnType<typeof useVoiceInput> }) {
-  const t = useT();
-  const listening = voice.state.status === 'listening';
-  const label = voiceButtonLabel(t, voice.state, t('startSpeaking'));
-  return (
-    <Pressable
-      accessibilityRole="button"
-      accessibilityLabel={label}
-      accessibilityState={{ busy: voice.state.status === 'processing' }}
-      onPress={voice.toggle}
-      style={({ pressed }) => ({
-        minHeight: 96,
-        flexDirection: 'row',
-        alignItems: 'center',
-        justifyContent: 'center',
-        gap: 16,
-        borderRadius: R.card,
-        borderWidth: 1,
-        borderColor: C.ink,
-        backgroundColor: listening ? C.accent : C.paper,
-        opacity: pressed || voice.state.status === 'processing' ? 0.75 : 1,
-      })}>
-      <MicIcon size={32} />
-      <T v="h3">{label}</T>
-    </Pressable>
-  );
+/** Maps recognizer state onto the app's MicrophoneButton states. */
+export function micStateOf(voice: ReturnType<typeof useVoiceInput>, heard: string | null): MicState {
+  const s = voice.state.status;
+  if (Platform.OS === 'web' || s === 'model_unavailable') return 'unavailable';
+  if (s === 'listening' || s === 'processing') return s;
+  if (s === 'transcript' || (s === 'idle' && heard)) return 'results';
+  return 'ready';
 }
 
 /** "What I heard" card: shows the transcript or the reason there is none. */

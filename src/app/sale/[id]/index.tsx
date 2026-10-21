@@ -1,78 +1,62 @@
 import { useRouter } from 'expo-router';
 import { useState } from 'react';
+import { FlatList } from 'react-native';
 
-import { NoSale, useDraft, useQtyLabel } from '@/components/sale';
-import { Btn, Card, Row, Screen, T } from '@/components/ui';
-import { useVoiceInput, VoiceButton, VoiceStatus } from '@/components/voice';
-import { fmtMoney, lineTotal, openDrafts, saleTotal } from '@/lib/engine';
+import { BillItemRow, BillTotalBar, NoSale, useDraft } from '@/components/sale';
+import { Btn, Empty, MicrophoneButton, Row, Screen, T } from '@/components/ui';
+import { micStateOf, useVoiceInput, VoiceStatus } from '@/components/voice';
+import { openDrafts } from '@/lib/engine';
 import { useT } from '@/lib/i18n';
 import { actions } from '@/lib/store';
 
+/** The whole sale lives here: add, correct, see the total, go to review. No separate edit screen. */
 export default function NewBill() {
   const t = useT();
   const router = useRouter();
-  const qtyLabel = useQtyLabel();
   const { id, app, sale } = useDraft();
   // Raw transcript only. Matching it to products/quantities belongs to the inventory layer.
   const [heard, setHeard] = useState<string | null>(null);
   const voice = useVoiceInput((r) => setHeard(r.transcript));
-  const [confirmCancel, setConfirmCancel] = useState(false);
 
   if (!sale) return <NoSale title={t('newBill')} />;
-  const others = openDrafts(app).filter((d) => d.id !== sale.id).length;
-
-  const cancel = () => {
-    if (sale.items.length && !confirmCancel) return setConfirmCancel(true);
-    actions.discardSale(sale.id);
-    router.replace('/');
-  };
 
   return (
     <Screen
       title={t('newBill')}
+      scroll={false}
       footer={
-        sale.items.length ? (
-          <Btn label={`${t('reviewBill')} · ${fmtMoney(saleTotal(sale.items))}`} onPress={() => router.push(`/sale/${id}/review`)} />
-        ) : undefined
+        <BillTotalBar items={sale.items}>
+          <Btn label={t('reviewBill')} disabled={!sale.items.length} onPress={() => router.push(`/sale/${id}/review`)} />
+        </BillTotalBar>
       }>
-      <Card>
-        <T v="caption" c="ash">{t('saleRef')}</T>
+      <Row style={{ justifyContent: 'space-between' }}>
         <T v="h2">{t('saleN', { n: sale.label })}</T>
-        <T c="ash">
-          {t('itemsCount', { n: sale.items.length })} · {fmtMoney(saleTotal(sale.items))}
-        </T>
-      </Card>
+        <Btn size="sm" kind="outline" label={`${t('openSalesBtn')} (${openDrafts(app).length})`} onPress={() => router.push('/sales')} />
+      </Row>
 
-      <VoiceButton voice={voice} />
-      <VoiceStatus voice={voice} heard={heard} />
+      <MicrophoneButton state={micStateOf(voice, heard)} onPress={voice.toggle} />
+      {voice.state.status !== 'idle' || voice.webNote || heard ? <VoiceStatus voice={voice} heard={heard} /> : null}
 
-      {sale.items.length ? (
-        <Card>
-          {sale.items.map((i) => (
-            <Row key={i.id} style={{ justifyContent: 'space-between' }}>
-              <T style={{ flex: 1 }}>
-                {i.name} · {qtyLabel(i.qty, i.unit)}
-              </T>
-              <T>{fmtMoney(lineTotal(i.unitPaise, i.qty))}</T>
-            </Row>
-          ))}
-          <Btn kind="wash" label={t('changeItems')} onPress={() => router.push(`/sale/${id}/edit`)} />
-        </Card>
-      ) : null}
+      <Row>
+        <Btn label={t('addItem')} onPress={() => router.push(`/sale/${id}/search`)} style={{ flex: 1 }} />
+        <Btn kind="outline" label={t('scanBarcode')} onPress={() => router.push(`/scan?saleId=${id}`)} style={{ flex: 1 }} />
+      </Row>
 
-      <Btn kind="outline" label={t('addManual')} onPress={() => router.push(`/sale/${id}/search`)} />
-      <Btn kind="outline" label={t('scanBarcode')} onPress={() => router.push(`/scan?saleId=${id}`)} />
-      {others > 0 ? <Btn kind="wash" label={`${t('openSalesBtn')} (${others})`} onPress={() => router.push('/sales')} /> : null}
-
-      {confirmCancel ? (
-        <Card wash>
-          <T v="sub">{t('cancelAsk')}</T>
-          <Btn kind="outline" label={t('cancelYes')} onPress={cancel} />
-          <Btn kind="wash" label={t('keepBill')} onPress={() => setConfirmCancel(false)} />
-        </Card>
-      ) : (
-        <Btn kind="wash" label={t('cancelBill')} onPress={cancel} />
-      )}
+      <FlatList
+        style={{ flex: 1 }}
+        data={sale.items}
+        keyExtractor={(i) => i.id}
+        keyboardShouldPersistTaps="handled"
+        ListEmptyComponent={<Empty title={t('billEmpty')} />}
+        renderItem={({ item }) => (
+          <BillItemRow
+            item={item}
+            onQty={(q) => actions.setQty(sale.id, item.id, q)}
+            onReplace={() => router.push(`/sale/${id}/search?replace=${item.id}`)}
+            onRemove={() => actions.removeItem(sale.id, item.id)}
+          />
+        )}
+      />
     </Screen>
   );
 }
