@@ -1,10 +1,9 @@
 import { useRouter } from 'expo-router';
 import { useState } from 'react';
-import { Pressable } from 'react-native';
 
 import { NoSale, useDraft, useQtyLabel } from '@/components/sale';
-import { Btn, Card, MicIcon, Row, Screen, T } from '@/components/ui';
-import { C, R } from '@/constants/theme';
+import { Btn, Card, Row, Screen, T } from '@/components/ui';
+import { useVoiceInput, VoiceButton, VoiceStatus } from '@/components/voice';
 import { fmtMoney, lineTotal, openDrafts, saleTotal } from '@/lib/engine';
 import { useT } from '@/lib/i18n';
 import { actions } from '@/lib/store';
@@ -14,7 +13,9 @@ export default function NewBill() {
   const router = useRouter();
   const qtyLabel = useQtyLabel();
   const { id, app, sale } = useDraft();
-  const [voiceNote, setVoiceNote] = useState(false);
+  // Raw transcript only. Matching it to products/quantities belongs to the inventory layer.
+  const [heard, setHeard] = useState<string | null>(null);
+  const voice = useVoiceInput((r) => setHeard(r.transcript));
   const [confirmCancel, setConfirmCancel] = useState(false);
 
   if (!sale) return <NoSale title={t('newBill')} />;
@@ -42,31 +43,8 @@ export default function NewBill() {
         </T>
       </Card>
 
-      <Pressable
-        accessibilityRole="button"
-        accessibilityLabel={t('startSpeaking')}
-        onPress={() => setVoiceNote(true)}
-        style={({ pressed }) => ({
-          minHeight: 96,
-          flexDirection: 'row',
-          alignItems: 'center',
-          justifyContent: 'center',
-          gap: 16,
-          borderRadius: R.card,
-          borderWidth: 1,
-          borderColor: C.ink,
-          backgroundColor: C.paper,
-          opacity: pressed ? 0.75 : 1,
-        })}>
-        <MicIcon size={32} />
-        <T v="h3">{t('startSpeaking')}</T>
-      </Pressable>
-
-      <Card wash>
-        <T v="caption" c="ash">{t('transcript')}</T>
-        <T v="sub">{voiceNote ? t('voiceOff') : t('transcriptEmpty')}</T>
-        {voiceNote ? <T c="ash">{t('voiceOffHint')}</T> : null}
-      </Card>
+      <VoiceButton voice={voice} />
+      <VoiceStatus voice={voice} heard={heard} />
 
       {sale.items.length ? (
         <Card>

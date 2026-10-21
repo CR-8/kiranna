@@ -4,6 +4,7 @@ import { TextInput, View } from 'react-native';
 
 import { NoSale, useDraft } from '@/components/sale';
 import { Btn, Card, Row, Screen, SquareBtn, T } from '@/components/ui';
+import { useVoiceInput, voiceButtonLabel, VoiceStatus } from '@/components/voice';
 import { C, FONT, R } from '@/constants/theme';
 import { fmtMoney, fmtQty, lineTotal, parseQty, saleTotal, stepFor } from '@/lib/engine';
 import { useT, useUnit } from '@/lib/i18n';
@@ -47,7 +48,9 @@ export default function EditBill() {
   const unit = useUnit();
   const router = useRouter();
   const { id, sale } = useDraft();
-  const [voiceNote, setVoiceNote] = useState(false);
+  // Raw transcript only. Turning it into a correction belongs to the inventory layer.
+  const [heard, setHeard] = useState<string | null>(null);
+  const voice = useVoiceInput((r) => setHeard(r.transcript));
 
   if (!sale) return <NoSale title={t('changeBill')} />;
   const total = saleTotal(sale.items);
@@ -90,14 +93,14 @@ export default function EditBill() {
 
       <Row>
         <Btn kind="outline" label={t('addItem')} onPress={() => router.push(`/sale/${id}/search`)} style={{ flex: 1 }} />
-        <Btn kind="outline" label={t('speakCorrection')} onPress={() => setVoiceNote(true)} style={{ flex: 1 }} />
+        <Btn
+          kind={voice.state.status === 'listening' ? 'primary' : 'outline'}
+          label={voiceButtonLabel(t, voice.state, t('speakCorrection'))}
+          onPress={voice.toggle}
+          style={{ flex: 1 }}
+        />
       </Row>
-      {voiceNote ? (
-        <Card wash>
-          <T v="sub">{t('voiceOff')}</T>
-          <T c="ash">{t('voiceOffHint')}</T>
-        </Card>
-      ) : null}
+      {voice.state.status !== 'idle' || voice.webNote || heard ? <VoiceStatus voice={voice} heard={heard} /> : null}
     </Screen>
   );
 }
