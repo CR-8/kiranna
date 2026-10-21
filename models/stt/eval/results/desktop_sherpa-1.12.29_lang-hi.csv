@@ -1,0 +1,361 @@
+file,id,voice,condition,duration_s,language,reference,hypothesis,err_raw,err_norm,ref_words,has_quantity,quantity_ok,quantity_spurious,has_product,product_strict_ok,product_norm_ok,command_ok,devanagari_in_output,decode_s,rtf
+c01_rohan_clean.wav,c01,rohan,clean,2.533,hinglish,maggi ke dus packet add karo,Meggi ke das packet add karo.,2,2,6,True,True,False,True,False,False,False,False,0.4171,0.1647
+c01_rohan_fast.wav,c01,rohan,fast,2.289,hinglish,maggi ke dus packet add karo,Meggi ke das packet add karo.,2,2,6,True,True,False,True,False,False,False,False,0.4753,0.2076
+c02_rohan_clean.wav,c02,rohan,clean,2.61,hinglish,maggi ke do packet bech diye,Meggi ke do packet bhej die.,3,3,6,True,True,False,True,False,False,False,False,0.4965,0.1902
+c02_rohan_fast.wav,c02,rohan,fast,2.286,hinglish,maggi ke do packet bech diye,Maggi ke do packet bech die.,1,1,6,True,True,False,True,True,True,False,False,0.5291,0.2314
+c03_rohan_clean.wav,c03,rohan,clean,2.73,hinglish,paanch kilo chawal restock karo,Paanch kilo chaaval list talk karo.,3,2,5,True,True,False,True,False,True,False,False,0.5394,0.1976
+c03_rohan_fast.wav,c03,rohan,fast,2.375,hinglish,paanch kilo chawal restock karo,Paanch kilo chaaval restore karo.,2,1,5,True,True,False,True,False,True,False,False,0.5191,0.2186
+c04_rohan_clean.wav,c04,rohan,clean,2.762,hinglish,milk ke chaar packet add karna,Milk ke chaar packet add karna.,0,0,6,True,True,False,True,True,True,True,False,0.5851,0.2118
+c04_rohan_fast.wav,c04,rohan,fast,2.446,hinglish,milk ke chaar packet add karna,Milk ke chaar packet add karna.,0,0,6,True,True,False,True,True,True,True,False,0.5638,0.2305
+c05_rohan_clean.wav,c05,rohan,clean,2.107,hindi,aadha kilo cheeni bechi,Aadha kilo chini bechi.,1,0,4,True,True,False,True,False,True,True,False,0.5627,0.267
+c05_rohan_fast.wav,c05,rohan,fast,2.038,hindi,aadha kilo cheeni bechi,Aadha kilo chini bechi.,1,0,4,True,True,False,True,False,True,True,False,0.5454,0.2676
+c06_rohan_clean.wav,c06,rohan,clean,2.294,hinglish,maggi ka stock kitna hai,Maggi ka stock kitna hai?,0,0,5,False,True,False,True,True,True,True,False,0.5241,0.2285
+c06_rohan_fast.wav,c06,rohan,fast,1.988,hinglish,maggi ka stock kitna hai,Maggi ka stock kitna hai?,0,0,5,False,True,False,True,True,True,True,False,0.4751,0.239
+c07_rohan_clean.wav,c07,rohan,clean,3.091,hinglish,pehle das bola tha ab paanch packet karo,Pahle das bola tha ab paanch packet karo.,1,1,8,True,True,False,False,True,True,False,False,0.6711,0.2171
+c07_rohan_fast.wav,c07,rohan,fast,2.949,hinglish,pehle das bola tha ab paanch packet karo,Pahle das bola tha ab baat packet karo.,2,2,8,True,False,False,False,True,True,False,False,0.6459,0.219
+c08_rohan_clean.wav,c08,rohan,clean,2.43,hinglish,do packet nahi teen packet,"Do packet nahin, tin packet.",2,1,5,True,True,False,False,True,True,False,False,0.5062,0.2083
+c08_rohan_fast.wav,c08,rohan,fast,2.314,hinglish,do packet nahi teen packet,"Do packet nahin, tin packet.",2,1,5,True,True,False,False,True,True,False,False,0.5087,0.2198
+c09_rohan_clean.wav,c09,rohan,clean,2.777,hinglish,maggi hatao aur pasta add karo,Meggi hatao aur pasta add karo.,1,1,6,False,True,False,True,False,False,False,False,0.5917,0.2131
+c09_rohan_fast.wav,c09,rohan,fast,2.664,hinglish,maggi hatao aur pasta add karo,Megi hatao aur pasta add karo.,1,1,6,False,True,False,True,False,False,False,False,0.5545,0.2081
+c10_rohan_clean.wav,c10,rohan,clean,2.809,hinglish,parle g ke bees packet add karo,Parlay ji ke bis packet add karo.,3,2,7,True,True,False,True,False,False,False,False,0.5894,0.2098
+c10_rohan_fast.wav,c10,rohan,fast,2.574,hinglish,parle g ke bees packet add karo,Paarle ji ke bis packet add karo.,3,1,7,True,True,False,True,False,False,False,False,0.5872,0.2281
+c11_rohan_clean.wav,c11,rohan,clean,2.471,hinglish,do litre doodh bech diya,Do liter doodh bech diya.,1,1,5,True,True,False,True,True,True,False,False,0.5534,0.224
+c11_rohan_fast.wav,c11,rohan,fast,2.218,hinglish,do litre doodh bech diya,Do litar doodh bech diya.,1,1,5,True,True,False,True,True,True,False,False,0.5371,0.2421
+c12_rohan_clean.wav,c12,rohan,clean,2.97,hinglish,tata namak ke teen packet restock karo,Tata namak ke tin packet stock karo.,2,1,7,True,True,False,True,True,True,False,False,0.5808,0.1955
+c12_rohan_fast.wav,c12,rohan,fast,2.9,hinglish,tata namak ke teen packet restock karo,Tata namak ke tin packet stock karo.,2,1,7,True,True,False,True,True,True,False,False,0.5912,0.2039
+c13_rohan_clean.wav,c13,rohan,clean,2.139,hinglish,ek kilo aata add karo,E kilo aata add karo.,1,1,5,True,False,False,True,True,True,False,False,0.4439,0.2075
+c13_rohan_fast.wav,c13,rohan,fast,2.117,hinglish,ek kilo aata add karo,E kilo aata add karo.,1,1,5,True,False,False,True,True,True,False,False,0.4831,0.2282
+c14_rohan_clean.wav,c14,rohan,clean,3.003,hinglish,surf excel ka stock kitna bacha hai,Sirph excel ka stock kitna bacha hai?,1,1,7,False,True,False,True,False,False,False,False,0.5745,0.1913
+c14_rohan_fast.wav,c14,rohan,fast,2.723,hinglish,surf excel ka stock kitna bacha hai,Sirf excel ka stock kitna bataaya hai?,2,2,7,False,True,False,True,False,False,False,False,0.5857,0.2151
+c15_rohan_clean.wav,c15,rohan,clean,2.665,hindi,paanch sau gram daal bechi,Paanch sau gram daal bechi,0,0,5,True,True,False,True,True,True,True,False,0.4462,0.1674
+c15_rohan_fast.wav,c15,rohan,fast,2.397,hindi,paanch sau gram daal bechi,Paanch sau gram daal bechi.,0,0,5,True,True,False,True,True,True,True,False,0.4925,0.2055
+c16_rohan_clean.wav,c16,rohan,clean,2.068,hindi,barah ande bech diye,Baarah antibad bhej die.,4,3,4,True,True,False,True,False,False,False,False,0.5126,0.2479
+c16_rohan_fast.wav,c16,rohan,fast,1.902,hindi,barah ande bech diye,Baarah ande bhej die.,3,2,4,True,True,False,True,True,True,False,False,0.5057,0.2659
+c17_rohan_clean.wav,c17,rohan,clean,2.971,hinglish,amul butter ke chhe packet add karo,Amool butter ke chhah packet add karo.,2,1,7,True,True,False,True,False,True,False,False,0.6422,0.2162
+c17_rohan_fast.wav,c17,rohan,fast,2.717,hinglish,amul butter ke chhe packet add karo,Amoo butter ke chhah packet add karo.,2,2,7,True,True,False,True,False,False,False,False,0.5972,0.2198
+c18_rohan_clean.wav,c18,rohan,clean,2.376,hindi,dhai kilo aloo bech diya,Dhai kilo aaloo bech diya.,1,0,5,True,True,False,True,False,True,True,False,0.5856,0.2464
+c18_rohan_fast.wav,c18,rohan,fast,2.319,hindi,dhai kilo aloo bech diya,Dhai kilo aaloo bech diya.,1,0,5,True,True,False,True,False,True,True,False,0.555,0.2393
+c19_rohan_clean.wav,c19,rohan,clean,2.298,english,add ten packets of maggi,Atten package house meinegi.,5,5,5,True,False,False,True,False,False,False,False,0.4736,0.2061
+c19_rohan_fast.wav,c19,rohan,fast,2.26,english,add ten packets of maggi,At ten package of Maggi,2,2,5,True,True,False,True,True,True,False,False,0.4037,0.1786
+c20_rohan_clean.wav,c20,rohan,clean,2.502,english,sell two kilos of rice,Cred 2 kilo of fries,4,4,5,True,True,False,True,False,False,False,False,0.4225,0.1689
+c20_rohan_fast.wav,c20,rohan,fast,2.231,english,sell two kilos of rice,Sale 2 kilo of rice,3,3,5,True,True,False,True,True,True,False,False,0.4064,0.1822
+c21_rohan_clean.wav,c21,rohan,clean,2.455,english,how much sugar is left,How much sugar is left?,0,0,5,False,True,False,True,True,True,True,False,0.4311,0.1756
+c21_rohan_fast.wav,c21,rohan,fast,2.353,english,how much sugar is left,How much sugar is left?,0,0,5,False,True,False,True,True,True,True,False,0.4117,0.175
+c22_rohan_clean.wav,c22,rohan,clean,2.838,hinglish,colgate ke do packet aur add karo,Coldgate ke do packet aur add karo.,1,1,7,True,True,False,True,False,False,False,False,0.5656,0.1993
+c22_rohan_fast.wav,c22,rohan,fast,2.553,hinglish,colgate ke do packet aur add karo,Kul rate ke do packet aur add karo.,2,2,7,True,True,False,True,False,False,False,False,0.5406,0.2118
+c23_rohan_clean.wav,c23,rohan,clean,2.493,hinglish,saat packet biscuit bech diye,Saat packet biscuit bech die.,1,1,5,True,True,False,True,True,True,False,False,0.4824,0.1935
+c23_rohan_fast.wav,c23,rohan,fast,2.25,hinglish,saat packet biscuit bech diye,Saat packet biscuit bhej die.,2,2,5,True,True,False,True,True,True,False,False,0.4904,0.218
+c24_rohan_clean.wav,c24,rohan,clean,2.317,hindi,pachchis kilo chawal aaya hai,Pachchis kilo chaablaaya hai.,2,2,5,True,True,False,True,False,False,False,False,0.5504,0.2375
+c24_rohan_fast.wav,c24,rohan,fast,2.124,hindi,pachchis kilo chawal aaya hai,Pachchis kilo chaablaaya hai.,2,2,5,True,True,False,True,False,False,False,False,0.5757,0.271
+c25_rohan_clean.wav,c25,rohan,clean,2.634,hinglish,sabun ke chaar piece add karo,Saabun ke chaar piece add karo.,1,0,6,True,True,False,True,False,True,True,False,0.5743,0.218
+c25_rohan_fast.wav,c25,rohan,fast,2.517,hinglish,sabun ke chaar piece add karo,Saavan ke chaar piece add karo.,1,1,6,True,True,False,True,False,False,False,False,0.5489,0.2181
+c26_rohan_clean.wav,c26,rohan,clean,2.383,hinglish,teen packet maggi wapas aaye,Tin packet mahangi vaapas aae.,4,2,5,True,True,False,True,False,False,False,False,0.5698,0.2391
+c26_rohan_fast.wav,c26,rohan,fast,2.367,hinglish,teen packet maggi wapas aaye,Tin packet mein ki vaapas aae.,5,3,5,True,True,False,True,False,False,False,False,0.5414,0.2287
+c27_rohan_clean.wav,c27,rohan,clean,2.477,hinglish,pasta ka stock khatam ho gaya,Paanch tak ka stock khatm ho gaya.,3,3,6,False,True,True,True,False,False,False,False,0.5576,0.2251
+c27_rohan_fast.wav,c27,rohan,fast,2.343,hinglish,pasta ka stock khatam ho gaya,Paasta ka stock khatm ho gaya.,2,1,6,False,True,False,True,False,True,False,False,0.5827,0.2487
+c28_rohan_clean.wav,c28,rohan,clean,2.651,hindi,ek darjan kele bech diye,Ek darjan kele bech die.,1,1,5,True,True,False,True,True,True,False,False,0.5474,0.2065
+c28_rohan_fast.wav,c28,rohan,fast,2.223,hindi,ek darjan kele bech diye,Ek darjan kele bech die.,1,1,5,True,True,False,True,True,True,False,False,0.5231,0.2353
+c29_rohan_clean.wav,c29,rohan,clean,2.806,hindi,do sau rupaye ka tel bech diya,Do sau rupe ka tel bhej diya.,2,2,7,True,True,False,True,True,True,False,False,0.5994,0.2136
+c29_rohan_fast.wav,c29,rohan,fast,2.475,hindi,do sau rupaye ka tel bech diya,Do sau rupe ka tel bech diya.,1,1,7,True,True,False,True,True,True,False,False,0.5768,0.233
+c30_rohan_clean.wav,c30,rohan,clean,2.37,hinglish,nau packet chips add karo,Nau packet chips add karo.,0,0,5,True,True,False,True,True,True,True,False,0.484,0.2042
+c30_rohan_fast.wav,c30,rohan,fast,2.117,hinglish,nau packet chips add karo,Nau packet chips add karo.,0,0,5,True,True,False,True,True,True,True,False,0.4986,0.2355
+c01_priyamvada_clean.wav,c01,priyamvada,clean,3.05,hinglish,maggi ke dus packet add karo,Meggi ke das packet add karo.,2,2,6,True,True,False,True,False,False,False,False,0.5554,0.1821
+c01_priyamvada_fast.wav,c01,priyamvada,fast,2.667,hinglish,maggi ke dus packet add karo,Maggi ke das packet add karo.,1,1,6,True,True,False,True,True,True,False,False,0.5301,0.1987
+c02_priyamvada_clean.wav,c02,priyamvada,clean,2.934,hinglish,maggi ke do packet bech diye,Mainki ke do bracket bech die.,3,3,6,True,True,False,True,False,False,False,False,0.6003,0.2046
+c02_priyamvada_fast.wav,c02,priyamvada,fast,2.469,hinglish,maggi ke do packet bech diye,Megi ke do packet bech di.,2,2,6,True,True,False,True,False,False,False,False,0.5213,0.2112
+c03_priyamvada_clean.wav,c03,priyamvada,clean,3.131,hinglish,paanch kilo chawal restock karo,Paanch ke load travel restau karo.,4,4,5,True,True,False,True,False,False,False,False,0.5668,0.181
+c03_priyamvada_fast.wav,c03,priyamvada,fast,2.632,hinglish,paanch kilo chawal restock karo,"Paanch ke lo chaaval, please tak karo.",5,4,5,True,True,False,True,False,True,False,False,0.5947,0.226
+c04_priyamvada_clean.wav,c04,priyamvada,clean,3.131,hinglish,milk ke chaar packet add karna,Milk ke chaar packet add karna.,0,0,6,True,True,False,True,True,True,True,False,0.5947,0.1899
+c04_priyamvada_fast.wav,c04,priyamvada,fast,2.783,hinglish,milk ke chaar packet add karna,Milt ke chaar packet add karna.,1,1,6,True,True,False,True,False,False,False,False,0.5543,0.1992
+c05_priyamvada_clean.wav,c05,priyamvada,clean,2.608,hindi,aadha kilo cheeni bechi,Aadha kilo chini bechi.,1,0,4,True,True,False,True,False,True,True,False,0.4826,0.185
+c05_priyamvada_fast.wav,c05,priyamvada,fast,2.26,hindi,aadha kilo cheeni bechi,Aadha kilo chini bechi.,1,0,4,True,True,False,True,False,True,True,False,0.5309,0.2349
+c06_priyamvada_clean.wav,c06,priyamvada,clean,2.643,hinglish,maggi ka stock kitna hai,Megi ka stock kitna hai?,1,1,5,False,True,False,True,False,False,False,False,0.4966,0.1879
+c06_priyamvada_fast.wav,c06,priyamvada,fast,2.249,hinglish,maggi ka stock kitna hai,Magica stock kitna hai?,2,2,5,False,True,False,True,False,False,False,False,0.43,0.1912
+c07_priyamvada_clean.wav,c07,priyamvada,clean,3.563,hinglish,pehle das bola tha ab paanch packet karo,Pahli das bola tha ab paanch packet karo.,1,1,8,True,True,False,False,True,True,False,False,0.6688,0.1877
+c07_priyamvada_fast.wav,c07,priyamvada,fast,3.149,hinglish,pehle das bola tha ab paanch packet karo,Pahli das bola tha ab paanch packet karo.,1,1,8,True,True,False,False,True,True,False,False,0.6981,0.2217
+c08_priyamvada_clean.wav,c08,priyamvada,clean,2.816,hinglish,do packet nahi teen packet,"Do packet nahin, tin packet.",2,1,5,True,True,False,False,True,True,False,False,0.48,0.1705
+c08_priyamvada_fast.wav,c08,priyamvada,fast,2.562,hinglish,do packet nahi teen packet,"Do packet nahin, tin packet.",2,1,5,True,True,False,False,True,True,False,False,0.4592,0.1792
+c09_priyamvada_clean.wav,c09,priyamvada,clean,3.061,hinglish,maggi hatao aur pasta add karo,Mainki hatao aur pasta add karo.,1,1,6,False,True,False,True,False,False,False,False,0.6417,0.2097
+c09_priyamvada_fast.wav,c09,priyamvada,fast,2.922,hinglish,maggi hatao aur pasta add karo,Megi hatao aur pasta add karo.,1,1,6,False,True,False,True,False,False,False,False,0.6159,0.2108
+c10_priyamvada_clean.wav,c10,priyamvada,clean,3.143,hinglish,parle g ke bees packet add karo,Paarle ji ke bis packet add karo.,3,1,7,True,True,False,True,False,False,False,False,0.6259,0.1991
+c10_priyamvada_fast.wav,c10,priyamvada,fast,2.876,hinglish,parle g ke bees packet add karo,Paarili ji ke bis packet add karo.,3,2,7,True,True,False,True,False,False,False,False,0.6203,0.2157
+c11_priyamvada_clean.wav,c11,priyamvada,clean,2.516,hinglish,do litre doodh bech diya,Do liter doodh bech diya.,1,1,5,True,True,False,True,True,True,False,False,0.5298,0.2106
+c11_priyamvada_fast.wav,c11,priyamvada,fast,2.26,hinglish,do litre doodh bech diya,Do liter doodh bech diya.,1,1,5,True,True,False,True,True,True,False,False,0.5291,0.2341
+c12_priyamvada_clean.wav,c12,priyamvada,clean,3.479,hinglish,tata namak ke teen packet restock karo,Tata namak ke tin packet restore karo.,2,1,7,True,True,False,True,True,True,False,False,0.589,0.1693
+c12_priyamvada_fast.wav,c12,priyamvada,fast,3.177,hinglish,tata namak ke teen packet restock karo,Tata namak ke tin package restore karo.,3,2,7,True,True,False,True,True,True,False,False,0.6066,0.1909
+c13_priyamvada_clean.wav,c13,priyamvada,clean,2.713,hinglish,ek kilo aata add karo,8 kilo aata add karo.,1,1,5,True,False,True,True,True,True,False,False,0.545,0.2009
+c13_priyamvada_fast.wav,c13,priyamvada,fast,2.4,hinglish,ek kilo aata add karo,Ek kilo aata add karo.,0,0,5,True,True,False,True,True,True,True,False,0.5471,0.228
+c14_priyamvada_clean.wav,c14,priyamvada,clean,3.398,hinglish,surf excel ka stock kitna bacha hai,Surf ek sale ka stock kitna bacha hai?,2,2,7,False,True,True,True,False,False,False,False,0.6866,0.2021
+c14_priyamvada_fast.wav,c14,priyamvada,fast,3.003,hinglish,surf excel ka stock kitna bacha hai,Surf ek se ka stock kitna bacha hai?,2,2,7,False,True,True,True,False,False,False,False,0.6566,0.2187
+c15_priyamvada_clean.wav,c15,priyamvada,clean,2.469,hindi,paanch sau gram daal bechi,Paanch sau gram daal bechi.,0,0,5,True,True,False,True,True,True,True,False,0.5207,0.2109
+c15_priyamvada_fast.wav,c15,priyamvada,fast,2.179,hindi,paanch sau gram daal bechi,Paanch sau gram daal bechi.,0,0,5,True,True,False,True,True,True,True,False,0.4891,0.2244
+c16_priyamvada_clean.wav,c16,priyamvada,clean,2.33,hindi,barah ande bech diye,Maara any bech die.,3,3,4,True,False,False,True,False,False,False,False,0.4346,0.1865
+c16_priyamvada_fast.wav,c16,priyamvada,fast,2.098,hindi,barah ande bech diye,Baarah ande bech die.,2,1,4,True,True,False,True,True,True,False,False,0.4603,0.2194
+c17_priyamvada_clean.wav,c17,priyamvada,clean,3.41,hinglish,amul butter ke chhe packet add karo,Amool bataar ke chhah packet add karo.,3,2,7,True,True,False,True,False,False,False,False,0.7077,0.2075
+c17_priyamvada_fast.wav,c17,priyamvada,fast,2.945,hinglish,amul butter ke chhe packet add karo,Amool bataar ke chhe packet add karo.,2,1,7,True,True,False,True,False,False,False,False,0.5994,0.2035
+c18_priyamvada_clean.wav,c18,priyamvada,clean,2.69,hindi,dhai kilo aloo bech diya,Dhai kilo aaloo bech diya.,1,0,5,True,True,False,True,False,True,True,False,0.5816,0.2162
+c18_priyamvada_fast.wav,c18,priyamvada,fast,2.388,hindi,dhai kilo aloo bech diya,Dhai kilo aaloo bech diya.,1,0,5,True,True,False,True,False,True,True,False,0.5372,0.225
+c19_priyamvada_clean.wav,c19,priyamvada,clean,2.817,english,add ten packets of maggi,Ear tin package of Maggi,3,3,5,True,False,True,True,True,True,False,False,0.4484,0.1592
+c19_priyamvada_fast.wav,c19,priyamvada,fast,2.458,english,add ten packets of maggi,Atten package of Maggi,3,3,5,True,False,False,True,True,True,False,False,0.3983,0.162
+c20_priyamvada_clean.wav,c20,priyamvada,clean,2.678,english,sell two kilos of rice,Sale 2 kilo of rice,3,3,5,True,True,False,True,True,True,False,False,0.4875,0.182
+c20_priyamvada_fast.wav,c20,priyamvada,fast,2.446,english,sell two kilos of rice,Sale 2 kilos of rice,2,2,5,True,True,False,True,True,True,False,False,0.4239,0.1733
+c21_priyamvada_clean.wav,c21,priyamvada,clean,2.4,english,how much sugar is left,How much sugar is left?,0,0,5,False,True,False,True,True,True,True,False,0.4187,0.1745
+c21_priyamvada_fast.wav,c21,priyamvada,fast,2.237,english,how much sugar is left,How much sugar is left?,0,0,5,False,True,False,True,True,True,True,False,0.4047,0.1809
+c22_priyamvada_clean.wav,c22,priyamvada,clean,3.119,hinglish,colgate ke do packet aur add karo,Coregate ke do packet aur add karo.,1,1,7,True,True,False,True,False,False,False,False,0.6107,0.1958
+c22_priyamvada_fast.wav,c22,priyamvada,fast,2.806,hinglish,colgate ke do packet aur add karo,Kulne ke do packet aur add karo.,1,1,7,True,True,False,True,False,False,False,False,0.6376,0.2272
+c23_priyamvada_clean.wav,c23,priyamvada,clean,2.882,hinglish,saat packet biscuit bech diye,Saat packet biscuit bech die.,1,1,5,True,True,False,True,True,True,False,False,0.4874,0.1691
+c23_priyamvada_fast.wav,c23,priyamvada,fast,2.571,hinglish,saat packet biscuit bech diye,Saath packet biscuit bech die.,2,2,5,True,False,False,True,True,True,False,False,0.4817,0.1874
+c24_priyamvada_clean.wav,c24,priyamvada,clean,2.713,hindi,pachchis kilo chawal aaya hai,Pachchis kilo chaaval aaya hai.,1,0,5,True,True,False,True,False,True,True,False,0.5961,0.2197
+c24_priyamvada_fast.wav,c24,priyamvada,fast,2.481,hindi,pachchis kilo chawal aaya hai,Pachchis kilo chaaval aaya hai.,1,0,5,True,True,False,True,False,True,True,False,0.5673,0.2287
+c25_priyamvada_clean.wav,c25,priyamvada,clean,2.852,hinglish,sabun ke chaar piece add karo,Saamun ke chaar piece add karo.,1,1,6,True,True,False,True,False,False,False,False,0.5745,0.2014
+c25_priyamvada_fast.wav,c25,priyamvada,fast,2.62,hinglish,sabun ke chaar piece add karo,Saavan ke chaar piece add karo.,1,1,6,True,True,False,True,False,False,False,False,0.5238,0.1999
+c26_priyamvada_clean.wav,c26,priyamvada,clean,2.887,hinglish,teen packet maggi wapas aaye,Tin packet Maggi vaapas aai.,3,1,5,True,True,False,True,True,True,False,False,0.4571,0.1583
+c26_priyamvada_fast.wav,c26,priyamvada,fast,2.69,hinglish,teen packet maggi wapas aaye,Tin packet mein ghi vaapas aai.,5,3,5,True,True,False,True,False,False,False,False,0.5521,0.2053
+c27_priyamvada_clean.wav,c27,priyamvada,clean,3.015,hinglish,pasta ka stock khatam ho gaya,Paanch taar ka stockatm ho gaya.,4,4,6,False,True,True,True,False,False,False,False,0.4929,0.1635
+c27_priyamvada_fast.wav,c27,priyamvada,fast,2.585,hinglish,pasta ka stock khatam ho gaya,Paanch taar ka stockatm ho gaya.,4,4,6,False,True,True,True,False,False,False,False,0.4607,0.1782
+c28_priyamvada_clean.wav,c28,priyamvada,clean,2.713,hindi,ek darjan kele bech diye,Ek darjan ke lie bech die.,3,3,5,True,True,False,True,False,False,False,False,0.491,0.181
+c28_priyamvada_fast.wav,c28,priyamvada,fast,2.376,hindi,ek darjan kele bech diye,Ek darjan ke lie bech die.,3,3,5,True,True,False,True,False,False,False,False,0.5118,0.2154
+c29_priyamvada_clean.wav,c29,priyamvada,clean,2.817,hindi,do sau rupaye ka tel bech diya,Do sau rupe ka tel bech diya.,1,1,7,True,True,False,True,True,True,False,False,0.4971,0.1765
+c29_priyamvada_fast.wav,c29,priyamvada,fast,2.713,hindi,do sau rupaye ka tel bech diya,Do sau roope ka tel bech diya.,1,1,7,True,True,False,True,True,True,False,False,0.4508,0.1662
+c30_priyamvada_clean.wav,c30,priyamvada,clean,2.794,hinglish,nau packet chips add karo,No packet chips add karo.,1,1,5,True,False,False,True,True,True,False,False,0.3601,0.1289
+c30_priyamvada_fast.wav,c30,priyamvada,fast,2.469,hinglish,nau packet chips add karo,Nau packet chips and karo.,1,1,5,True,True,False,True,True,True,False,False,0.3193,0.1293
+c01_pratham_clean.wav,c01,pratham,clean,2.574,hinglish,maggi ke dus packet add karo,Meggi ke das packet add karo.,2,2,6,True,True,False,True,False,False,False,False,0.3979,0.1546
+c01_pratham_fast.wav,c01,pratham,fast,2.33,hinglish,maggi ke dus packet add karo,Meggi ke das package add karo.,3,3,6,True,True,False,True,False,False,False,False,0.4083,0.1752
+c02_pratham_clean.wav,c02,pratham,clean,2.509,hinglish,maggi ke do packet bech diye,Maggi ke do package bech die.,2,2,6,True,True,False,True,True,True,False,False,0.3729,0.1486
+c02_pratham_fast.wav,c02,pratham,fast,2.307,hinglish,maggi ke do packet bech diye,Maggi ke do packet bij pie.,2,2,6,True,True,False,True,True,True,False,False,0.3754,0.1627
+c03_pratham_clean.wav,c03,pratham,clean,2.585,hinglish,paanch kilo chawal restock karo,Paanch kilo chaaval re stock karo.,3,2,5,True,True,False,True,False,True,False,False,0.422,0.1632
+c03_pratham_fast.wav,c03,pratham,fast,2.272,hinglish,paanch kilo chawal restock karo,Paanch kilo chaavalviy stock karo.,2,2,5,True,True,False,True,False,False,False,False,0.4186,0.1843
+c04_pratham_clean.wav,c04,pratham,clean,2.555,hinglish,milk ke chaar packet add karna,Milp ke chaar packet add karna.,1,1,6,True,True,False,True,False,False,False,False,0.4325,0.1693
+c04_pratham_fast.wav,c04,pratham,fast,2.293,hinglish,milk ke chaar packet add karna,Milp ke chaar packet add karna.,1,1,6,True,True,False,True,False,False,False,False,0.427,0.1862
+c05_pratham_clean.wav,c05,pratham,clean,2.102,hindi,aadha kilo cheeni bechi,Aadha kilo chini bechhi.,2,0,4,True,True,False,True,False,True,True,False,0.3884,0.1848
+c05_pratham_fast.wav,c05,pratham,fast,2.04,hindi,aadha kilo cheeni bechi,Aadha ki lo chini bechi.,3,2,4,True,True,False,True,False,True,False,False,0.3944,0.1933
+c06_pratham_clean.wav,c06,pratham,clean,2.156,hinglish,maggi ka stock kitna hai,Maggi ka stock kitna hai?,0,0,5,False,True,False,True,True,True,True,False,0.3917,0.1817
+c06_pratham_fast.wav,c06,pratham,fast,2.016,hinglish,maggi ka stock kitna hai,Maggi ka stock kitna hai?,0,0,5,False,True,False,True,True,True,True,False,0.3439,0.1706
+c07_pratham_clean.wav,c07,pratham,clean,3.239,hinglish,pehle das bola tha ab paanch packet karo,Pahle das bola tha ab paanch packet karo.,1,1,8,True,True,False,False,True,True,False,False,0.5131,0.1584
+c07_pratham_fast.wav,c07,pratham,fast,2.864,hinglish,pehle das bola tha ab paanch packet karo,"Pahle das bola tha, ab paanch packet karo.",1,1,8,True,True,False,False,True,True,False,False,0.5379,0.1878
+c08_pratham_clean.wav,c08,pratham,clean,2.601,hinglish,do packet nahi teen packet,"Do packet nahin, tin packet.",2,1,5,True,True,False,False,True,True,False,False,0.3913,0.1504
+c08_pratham_fast.wav,c08,pratham,fast,2.239,hinglish,do packet nahi teen packet,"Do packet nahin, tin packet.",2,1,5,True,True,False,False,True,True,False,False,0.3791,0.1693
+c09_pratham_clean.wav,c09,pratham,clean,2.633,hinglish,maggi hatao aur pasta add karo,Megi hataon aur pasta add kar.,3,3,6,False,True,False,True,False,False,False,False,0.4272,0.1622
+c09_pratham_fast.wav,c09,pratham,fast,2.504,hinglish,maggi hatao aur pasta add karo,Megi hataavar pasta add karo.,3,3,6,False,True,False,True,False,False,False,False,0.4223,0.1687
+c10_pratham_clean.wav,c10,pratham,clean,2.817,hinglish,parle g ke bees packet add karo,Parle ji ke bis packet add karo.,2,1,7,True,True,False,True,False,False,False,False,0.4372,0.1552
+c10_pratham_fast.wav,c10,pratham,fast,2.55,hinglish,parle g ke bees packet add karo,Parlij ji ke bis packet add karo.,3,2,7,True,True,False,True,False,False,False,False,0.4694,0.1841
+c11_pratham_clean.wav,c11,pratham,clean,2.539,hinglish,do litre doodh bech diya,Do liter dood bech diya.,2,2,5,True,True,False,True,False,False,False,False,0.3702,0.1458
+c11_pratham_fast.wav,c11,pratham,fast,2.225,hinglish,do litre doodh bech diya,Do liter doodh bech diya.,1,1,5,True,True,False,True,True,True,False,False,0.4202,0.1889
+c12_pratham_clean.wav,c12,pratham,clean,2.957,hinglish,tata namak ke teen packet restock karo,Tata namak ke tin package restock karo.,2,1,7,True,True,False,True,True,True,False,False,0.4745,0.1605
+c12_pratham_fast.wav,c12,pratham,fast,2.655,hinglish,tata namak ke teen packet restock karo,Tata namak ke tin packagery stock karo.,3,2,7,True,True,False,True,True,True,False,False,0.4737,0.1784
+c13_pratham_clean.wav,c13,pratham,clean,2.353,hinglish,ek kilo aata add karo,Ek kilo aata add karo.,0,0,5,True,True,False,True,True,True,True,False,0.4257,0.1809
+c13_pratham_fast.wav,c13,pratham,fast,2.144,hinglish,ek kilo aata add karo,Ek kilo aata add kar.,1,1,5,True,True,False,True,True,True,False,False,0.3914,0.1826
+c14_pratham_clean.wav,c14,pratham,clean,2.818,hinglish,surf excel ka stock kitna bacha hai,Surf ek sil ka stock kitna bacha hai?,2,2,7,False,True,True,True,False,False,False,False,0.4395,0.156
+c14_pratham_fast.wav,c14,pratham,fast,2.725,hinglish,surf excel ka stock kitna bacha hai,Surf ek sil ka stock kitna bacha hai?,2,2,7,False,True,True,True,False,False,False,False,0.4267,0.1566
+c15_pratham_clean.wav,c15,pratham,clean,2.144,hindi,paanch sau gram daal bechi,Paanch sau gram daal bhi thi.,2,2,5,True,True,False,True,True,True,False,False,0.3908,0.1823
+c15_pratham_fast.wav,c15,pratham,fast,1.982,hindi,paanch sau gram daal bechi,Paanch sau gram daal bechi.,0,0,5,True,True,False,True,True,True,True,False,0.377,0.1902
+c16_pratham_clean.wav,c16,pratham,clean,2.119,hindi,barah ande bech diye,Baarah ande bech die.,2,1,4,True,True,False,True,True,True,False,False,0.3285,0.155
+c16_pratham_fast.wav,c16,pratham,fast,1.916,hindi,barah ande bech diye,Baarah ande bech die.,2,1,4,True,True,False,True,True,True,False,False,0.3559,0.1857
+c17_pratham_clean.wav,c17,pratham,clean,3.015,hinglish,amul butter ke chhe packet add karo,Amool butter ke chhah packet add karo.,2,1,7,True,True,False,True,False,True,False,False,0.442,0.1466
+c17_pratham_fast.wav,c17,pratham,fast,2.655,hinglish,amul butter ke chhe packet add karo,Amool butter ke chhah packet add karo.,2,1,7,True,True,False,True,False,True,False,False,0.4635,0.1746
+c18_pratham_clean.wav,c18,pratham,clean,2.328,hindi,dhai kilo aloo bech diya,Dhai kilo aaloo bechate hain.,3,2,5,True,True,False,True,False,True,False,False,0.4491,0.1929
+c18_pratham_fast.wav,c18,pratham,fast,2.132,hindi,dhai kilo aloo bech diya,Dhai kilo vaalon bech diya.,1,1,5,True,True,False,True,False,False,False,False,0.4583,0.2149
+c19_pratham_clean.wav,c19,pratham,clean,2.125,english,add ten packets of maggi,Atten package of maegi.,4,4,5,True,False,False,True,False,False,False,False,0.3636,0.1711
+c19_pratham_fast.wav,c19,pratham,fast,2.063,english,add ten packets of maggi,Atten packets of Maggi.,2,2,5,True,False,False,True,True,True,False,False,0.3292,0.1596
+c20_pratham_clean.wav,c20,pratham,clean,2.283,english,sell two kilos of rice,Sale 2 kgs of rice.,3,3,5,True,True,False,True,True,True,False,False,0.3716,0.1628
+c20_pratham_fast.wav,c20,pratham,fast,2.016,english,sell two kilos of rice,C two kilos of rice,1,1,5,True,False,False,True,True,True,False,False,0.3542,0.1757
+c21_pratham_clean.wav,c21,pratham,clean,1.831,english,how much sugar is left,How much sugar is lipt?,1,1,5,False,True,False,True,True,True,False,False,0.3431,0.1874
+c21_pratham_fast.wav,c21,pratham,fast,1.842,english,how much sugar is left,Ham a sugar is lipt.,3,3,5,False,True,False,True,True,True,False,False,0.34,0.1846
+c22_pratham_clean.wav,c22,pratham,clean,2.926,hinglish,colgate ke do packet aur add karo,Kul gate ke do packet aur add karo.,2,2,7,True,True,False,True,False,False,False,False,0.4647,0.1588
+c22_pratham_fast.wav,c22,pratham,fast,2.69,hinglish,colgate ke do packet aur add karo,Kulgit ke do packet aur add karo.,1,1,7,True,True,False,True,False,False,False,False,0.5523,0.2053
+c23_pratham_clean.wav,c23,pratham,clean,2.53,hinglish,saat packet biscuit bech diye,Saat packet biski bech die.,2,2,5,True,True,False,True,False,False,False,False,0.357,0.1411
+c23_pratham_fast.wav,c23,pratham,fast,2.295,hinglish,saat packet biscuit bech diye,Saat packet biski bech die.,2,2,5,True,True,False,True,False,False,False,False,0.3882,0.1691
+c24_pratham_clean.wav,c24,pratham,clean,2.092,hindi,pachchis kilo chawal aaya hai,Pachchis kilo chaablaaya hai.,2,2,5,True,True,False,True,False,False,False,False,0.4558,0.2179
+c24_pratham_fast.wav,c24,pratham,fast,2.051,hindi,pachchis kilo chawal aaya hai,Pachchis kilo chaablaaya hai.,2,2,5,True,True,False,True,False,False,False,False,0.4154,0.2025
+c25_pratham_clean.wav,c25,pratham,clean,2.516,hinglish,sabun ke chaar piece add karo,Saavan ke chaar piece add karo.,1,1,6,True,True,False,True,False,False,False,False,0.4318,0.1716
+c25_pratham_fast.wav,c25,pratham,fast,2.4,hinglish,sabun ke chaar piece add karo,Suban ke chaar piece add karo.,1,1,6,True,True,False,True,False,False,False,False,0.4146,0.1727
+c26_pratham_clean.wav,c26,pratham,clean,2.353,hinglish,teen packet maggi wapas aaye,Tin packet Maggi vaapas aae.,3,1,5,True,True,False,True,True,True,False,False,0.5047,0.2145
+c26_pratham_fast.wav,c26,pratham,fast,2.249,hinglish,teen packet maggi wapas aaye,Tin packet mein ki vaapas aae.,5,3,5,True,True,False,True,False,False,False,False,0.4397,0.1955
+c27_pratham_clean.wav,c27,pratham,clean,2.516,hinglish,pasta ka stock khatam ho gaya,Paanch taar ka stock khatm ho gaya.,3,3,6,False,True,True,True,False,False,False,False,0.501,0.1991
+c27_pratham_fast.wav,c27,pratham,fast,2.225,hinglish,pasta ka stock khatam ho gaya,Paanch taar ka stock khatm ho gaya.,3,3,6,False,True,True,True,False,False,False,False,0.5024,0.2258
+c28_pratham_clean.wav,c28,pratham,clean,2.416,hindi,ek darjan kele bech diye,Ek darjan ke lie bech die.,3,3,5,True,True,False,True,False,False,False,False,0.4433,0.1835
+c28_pratham_fast.wav,c28,pratham,fast,2.365,hindi,ek darjan kele bech diye,Ek darjan ke lie bech pie.,3,3,5,True,True,False,True,False,False,False,False,0.4376,0.185
+c29_pratham_clean.wav,c29,pratham,clean,2.562,hindi,do sau rupaye ka tel bech diya,Do sau rupe ka tel bech diya.,1,1,7,True,True,False,True,True,True,False,False,0.4384,0.1711
+c29_pratham_fast.wav,c29,pratham,fast,2.434,hindi,do sau rupaye ka tel bech diya,Do sau roopaay ka tel bech diya.,1,1,7,True,True,False,True,True,True,False,False,0.4713,0.1936
+c30_pratham_clean.wav,c30,pratham,clean,2.365,hinglish,nau packet chips add karo,Nau package chips add karo.,1,1,5,True,True,False,True,True,True,False,False,0.3895,0.1647
+c30_pratham_fast.wav,c30,pratham,fast,2.214,hinglish,nau packet chips add karo,Now package chips add karo.,2,2,5,True,False,False,True,True,True,False,False,0.3534,0.1596
+c01_rohan_white_10db.wav,c01,rohan,white_10db,2.533,hinglish,maggi ke dus packet add karo,Medi ke das packet add karo.,2,2,6,True,True,False,True,False,False,False,False,0.412,0.1626
+c01_rohan_babble_5db.wav,c01,rohan,babble_5db,2.533,hinglish,maggi ke dus packet add karo,Megi ke das bracket add karo.,3,3,6,True,True,False,True,False,False,False,False,0.4472,0.1766
+c02_rohan_white_10db.wav,c02,rohan,white_10db,2.61,hinglish,maggi ke do packet bech diye,Megi ke do packet bhej die.,3,3,6,True,True,False,True,False,False,False,False,0.4738,0.1815
+c02_rohan_babble_5db.wav,c02,rohan,babble_5db,2.61,hinglish,maggi ke do packet bech diye,Maggi ke do packet bhej die.,2,2,6,True,True,False,True,True,True,False,False,0.4252,0.1629
+c03_rohan_white_10db.wav,c03,rohan,white_10db,2.73,hinglish,paanch kilo chawal restock karo,Paanch kilo chaaval listop karo.,2,1,5,True,True,False,True,False,True,False,False,0.4249,0.1556
+c03_rohan_babble_5db.wav,c03,rohan,babble_5db,2.73,hinglish,paanch kilo chawal restock karo,"Bounce ke oopar, travel list off karo.",6,6,5,True,False,False,True,False,False,False,False,0.5176,0.1896
+c04_rohan_white_10db.wav,c04,rohan,white_10db,2.762,hinglish,milk ke chaar packet add karna,Milth ke chaar packet add karna.,1,1,6,True,True,False,True,False,False,False,False,0.4559,0.1651
+c04_rohan_babble_5db.wav,c04,rohan,babble_5db,2.762,hinglish,milk ke chaar packet add karna,Mere ke chaar package add karna.,2,2,6,True,True,False,True,False,False,False,False,0.4363,0.158
+c05_rohan_white_10db.wav,c05,rohan,white_10db,2.107,hindi,aadha kilo cheeni bechi,Aadha kilo chini beti.,2,1,4,True,True,False,True,False,True,False,False,0.3981,0.1889
+c05_rohan_babble_5db.wav,c05,rohan,babble_5db,2.107,hindi,aadha kilo cheeni bechi,Aadha kilo chini bechi.,1,0,4,True,True,False,True,False,True,True,False,0.4052,0.1923
+c06_rohan_white_10db.wav,c06,rohan,white_10db,2.294,hinglish,maggi ka stock kitna hai,Magic stock kitna hai?,2,2,5,False,True,False,True,False,False,False,False,0.3716,0.162
+c06_rohan_babble_5db.wav,c06,rohan,babble_5db,2.294,hinglish,maggi ka stock kitna hai,Magic sauce itna hai.,4,4,5,False,True,False,True,False,False,False,False,0.352,0.1535
+c07_rohan_white_10db.wav,c07,rohan,white_10db,3.091,hinglish,pehle das bola tha ab paanch packet karo,Pahle das bola tha ab baat packet karo.,2,2,8,True,False,False,False,True,True,False,False,0.5155,0.1668
+c07_rohan_babble_5db.wav,c07,rohan,babble_5db,3.091,hinglish,pehle das bola tha ab paanch packet karo,Pahle das bola tha aap paanch packet karo. Haan.,3,3,8,True,True,False,False,True,True,False,False,0.6212,0.201
+c08_rohan_white_10db.wav,c08,rohan,white_10db,2.43,hinglish,do packet nahi teen packet,"Do packet nahin, tin packet.",2,1,5,True,True,False,False,True,True,False,False,0.3581,0.1474
+c08_rohan_babble_5db.wav,c08,rohan,babble_5db,2.43,hinglish,do packet nahi teen packet,"Do pack nahin, tin pack raho.",5,4,5,True,True,False,False,True,True,False,False,0.4249,0.1749
+c09_rohan_white_10db.wav,c09,rohan,white_10db,2.777,hinglish,maggi hatao aur pasta add karo,Maggi hatao aur pasta add karo.,0,0,6,False,True,False,True,True,True,True,False,0.4427,0.1594
+c09_rohan_babble_5db.wav,c09,rohan,babble_5db,2.777,hinglish,maggi hatao aur pasta add karo,Main hi hata hoon aur paas ka add karo.,6,6,6,False,True,False,True,False,False,False,False,0.5833,0.21
+c10_rohan_white_10db.wav,c10,rohan,white_10db,2.809,hinglish,parle g ke bees packet add karo,Parlay G ke bis packet add karo.,2,1,7,True,True,False,True,False,False,False,False,0.4819,0.1716
+c10_rohan_babble_5db.wav,c10,rohan,babble_5db,2.809,hinglish,parle g ke bees packet add karo,Baal ji ke bis package add karo.,4,3,7,True,True,False,True,False,False,False,False,0.4467,0.159
+c11_rohan_white_10db.wav,c11,rohan,white_10db,2.471,hinglish,do litre doodh bech diya,Do liter doodh bech diya.,1,1,5,True,True,False,True,True,True,False,False,0.413,0.1671
+c11_rohan_babble_5db.wav,c11,rohan,babble_5db,2.471,hinglish,do litre doodh bech diya,Do litre doosre base diya.,2,2,5,True,True,False,True,False,False,False,False,0.436,0.1765
+c12_rohan_white_10db.wav,c12,rohan,white_10db,2.97,hinglish,tata namak ke teen packet restock karo,Tata namaste tin package stock karo.,5,4,7,True,True,False,True,False,False,False,False,0.468,0.1576
+c12_rohan_babble_5db.wav,c12,rohan,babble_5db,2.97,hinglish,tata namak ke teen packet restock karo,Tata namakshit tin bracket disturb karo.,5,4,7,True,True,False,True,False,False,False,False,0.5048,0.17
+c13_rohan_white_10db.wav,c13,rohan,white_10db,2.139,hinglish,ek kilo aata add karo,E kilo aata add karo.,1,1,5,True,False,False,True,True,True,False,False,0.3766,0.1761
+c13_rohan_babble_5db.wav,c13,rohan,babble_5db,2.139,hinglish,ek kilo aata add karo,A kilo aata add karvaaya.,2,2,5,True,False,False,True,True,True,False,False,0.4167,0.1948
+c14_rohan_white_10db.wav,c14,rohan,white_10db,3.003,hinglish,surf excel ka stock kitna bacha hai,Sirf excel ka stock kitna bacha hai?,1,1,7,False,True,False,True,False,False,False,False,0.5196,0.173
+c14_rohan_babble_5db.wav,c14,rohan,babble_5db,3.003,hinglish,surf excel ka stock kitna bacha hai,Sir excel ka stock kitna bacha hai?,1,1,7,False,True,False,True,False,False,False,False,0.4491,0.1496
+c15_rohan_white_10db.wav,c15,rohan,white_10db,2.665,hindi,paanch sau gram daal bechi,Paanch sau gram daal bechi.,0,0,5,True,True,False,True,True,True,True,False,0.4279,0.1606
+c15_rohan_babble_5db.wav,c15,rohan,babble_5db,2.665,hindi,paanch sau gram daal bechi,Paanch sau raamdaas bheji.,3,3,5,True,True,False,True,False,False,False,False,0.4889,0.1835
+c16_rohan_white_10db.wav,c16,rohan,white_10db,2.068,hindi,barah ande bech diye,Baarah ande base die.,3,2,4,True,True,False,True,True,True,False,False,0.3603,0.1742
+c16_rohan_babble_5db.wav,c16,rohan,babble_5db,2.068,hindi,barah ande bech diye,Baarambh ande beach bhi.,3,3,4,True,False,False,True,True,True,False,False,0.3916,0.1894
+c17_rohan_white_10db.wav,c17,rohan,white_10db,2.971,hinglish,amul butter ke chhe packet add karo,Amount butter ke chhah package add karo.,3,3,7,True,True,False,True,False,False,False,False,0.4681,0.1575
+c17_rohan_babble_5db.wav,c17,rohan,babble_5db,2.971,hinglish,amul butter ke chhe packet add karo,Ham us bachchon ke chehre package add karo.,5,5,7,True,False,False,True,False,False,False,False,0.5272,0.1775
+c18_rohan_white_10db.wav,c18,rohan,white_10db,2.376,hindi,dhai kilo aloo bech diya,Dhai kilo all base kiya.,3,3,5,True,True,False,True,False,False,False,False,0.3677,0.1548
+c18_rohan_babble_5db.wav,c18,rohan,babble_5db,2.376,hindi,dhai kilo aloo bech diya,"Bhai chilon, chalo bechate aap karo",6,6,5,True,False,False,True,False,False,False,False,0.4806,0.2023
+c19_rohan_white_10db.wav,c19,rohan,white_10db,2.298,english,add ten packets of maggi,Add tin pack ke soft magic.,5,5,5,True,False,True,True,False,False,False,False,0.3577,0.1557
+c19_rohan_babble_5db.wav,c19,rohan,babble_5db,2.298,english,add ten packets of maggi,And tin package off mein ki.,6,5,5,True,False,True,True,False,False,False,False,0.3239,0.1409
+c20_rohan_white_10db.wav,c20,rohan,white_10db,2.502,english,sell two kilos of rice,Cell 2 ke loss of rice,4,4,5,True,True,False,True,True,True,False,False,0.3555,0.1421
+c20_rohan_babble_5db.wav,c20,rohan,babble_5db,2.502,english,sell two kilos of rice,Sale do kilo of price.,4,4,5,True,True,False,True,False,False,False,False,0.3171,0.1267
+c21_rohan_white_10db.wav,c21,rohan,white_10db,2.455,english,how much sugar is left,How much sugar is late?,1,1,5,False,True,False,True,True,True,False,False,0.3183,0.1297
+c21_rohan_babble_5db.wav,c21,rohan,babble_5db,2.455,english,how much sugar is left,How much sugar is late?,1,1,5,False,True,False,True,True,True,False,False,0.4229,0.1723
+c22_rohan_white_10db.wav,c22,rohan,white_10db,2.838,hinglish,colgate ke do packet aur add karo,Hold with ke do packet aur add karo.,2,2,7,True,True,False,True,False,False,False,False,0.6117,0.2155
+c22_rohan_babble_5db.wav,c22,rohan,babble_5db,2.838,hinglish,colgate ke do packet aur add karo,Kaun le chhidotak app par add karo.,5,5,7,True,False,False,True,False,False,False,False,0.8021,0.2826
+c23_rohan_white_10db.wav,c23,rohan,white_10db,2.493,hinglish,saat packet biscuit bech diye,Saat packet biscuit bhej die.,2,2,5,True,True,False,True,True,True,False,False,0.5004,0.2007
+c23_rohan_babble_5db.wav,c23,rohan,babble_5db,2.493,hinglish,saat packet biscuit bech diye,Saat bagair buske bhej nahin karo,5,5,5,True,True,False,True,False,False,False,False,0.5719,0.2294
+c24_rohan_white_10db.wav,c24,rohan,white_10db,2.317,hindi,pachchis kilo chawal aaya hai,Par tis kilo kya bulaaya hai?,4,4,5,True,False,False,True,False,False,False,False,0.6046,0.2609
+c24_rohan_babble_5db.wav,c24,rohan,babble_5db,2.317,hindi,pachchis kilo chawal aaya hai,patr chiz ki log se aavla aaya hai,6,6,5,True,False,False,True,False,False,False,False,0.6514,0.2811
+c25_rohan_white_10db.wav,c25,rohan,white_10db,2.634,hinglish,sabun ke chaar piece add karo,Saabun ke chaar piece add karo.,1,0,6,True,True,False,True,False,True,True,False,0.6225,0.2363
+c25_rohan_babble_5db.wav,c25,rohan,babble_5db,2.634,hinglish,sabun ke chaar piece add karo,Saabun ke jar is add karoonga.,4,3,6,True,False,False,True,False,True,False,False,0.7125,0.2705
+c26_rohan_white_10db.wav,c26,rohan,white_10db,2.383,hinglish,teen packet maggi wapas aaye,Tin packet Maggi vaapas aae.,3,1,5,True,True,False,True,True,True,False,False,0.5685,0.2386
+c26_rohan_babble_5db.wav,c26,rohan,babble_5db,2.383,hinglish,teen packet maggi wapas aaye,Time packet mein hi vaapas aaega.,5,4,5,True,False,False,True,False,False,False,False,0.5571,0.2338
+c27_rohan_white_10db.wav,c27,rohan,white_10db,2.477,hinglish,pasta ka stock khatam ho gaya,Paas ka stock khatm ho gaya.,2,2,6,False,True,False,True,False,False,False,False,0.5444,0.2198
+c27_rohan_babble_5db.wav,c27,rohan,babble_5db,2.477,hinglish,pasta ka stock khatam ho gaya,Paanch tak ka stock khatm ho gaya.,3,3,6,False,True,True,True,False,False,False,False,0.5678,0.2292
+c28_rohan_white_10db.wav,c28,rohan,white_10db,2.651,hindi,ek darjan kele bech diye,Ek darjan ke lie base die.,4,4,5,True,True,False,True,False,False,False,False,0.5326,0.2009
+c28_rohan_babble_5db.wav,c28,rohan,babble_5db,2.651,hindi,ek darjan kele bech diye,Ek darjan ke lie behti hai.,4,4,5,True,True,False,True,False,False,False,False,0.5139,0.1939
+c29_rohan_white_10db.wav,c29,rohan,white_10db,2.806,hindi,do sau rupaye ka tel bech diya,Do sau rupe ka tel bhej diya.,2,2,7,True,True,False,True,True,True,False,False,0.4683,0.1669
+c29_rohan_babble_5db.wav,c29,rohan,babble_5db,2.806,hindi,do sau rupaye ka tel bech diya,Nau sau rupe ka die bech diya.,3,3,7,True,False,True,True,False,False,False,False,0.4183,0.1491
+c30_rohan_white_10db.wav,c30,rohan,white_10db,2.37,hinglish,nau packet chips add karo,Nau packet chips add karo.,0,0,5,True,True,False,True,True,True,True,False,0.3729,0.1573
+c30_rohan_babble_5db.wav,c30,rohan,babble_5db,2.37,hinglish,nau packet chips add karo,Nau bag ek chiz add karo.,3,3,5,True,True,True,True,False,False,False,False,0.3776,0.1593
+c01_priyamvada_white_10db.wav,c01,priyamvada,white_10db,3.05,hinglish,maggi ke dus packet add karo,Megi ke das packet add karo.,2,2,6,True,True,False,True,False,False,False,False,0.4367,0.1432
+c01_priyamvada_babble_5db.wav,c01,priyamvada,babble_5db,3.05,hinglish,maggi ke dus packet add karo,Meri ke das packet add karo.,2,2,6,True,True,False,True,False,False,False,False,0.4031,0.1322
+c02_priyamvada_white_10db.wav,c02,priyamvada,white_10db,2.934,hinglish,maggi ke do packet bech diye,Mainki ki do bracket bech di.,4,4,6,True,True,False,True,False,False,False,False,0.4178,0.1424
+c02_priyamvada_babble_5db.wav,c02,priyamvada,babble_5db,2.934,hinglish,maggi ke do packet bech diye,Megi ke do bracket bech di.,3,3,6,True,True,False,True,False,False,False,False,0.4528,0.1543
+c03_priyamvada_white_10db.wav,c03,priyamvada,white_10db,3.131,hinglish,paanch kilo chawal restock karo,Paanch ke load chaaval bis stock karo.,5,4,5,True,True,True,True,False,True,False,False,0.5235,0.1672
+c03_priyamvada_babble_5db.wav,c03,priyamvada,babble_5db,3.131,hinglish,paanch kilo chawal restock karo,Paanch kilo chaaval gistau karod.,3,2,5,True,True,False,True,False,True,False,False,0.4938,0.1577
+c04_priyamvada_white_10db.wav,c04,priyamvada,white_10db,3.131,hinglish,milk ke chaar packet add karna,Milk ki chaar pachahatt add karna.,2,2,6,True,True,False,True,True,True,False,False,0.7518,0.2401
+c04_priyamvada_babble_5db.wav,c04,priyamvada,babble_5db,3.131,hinglish,milk ke chaar packet add karna,Milk ke chaar package add karna.,1,1,6,True,True,False,True,True,True,False,False,0.4428,0.1414
+c05_priyamvada_white_10db.wav,c05,priyamvada,white_10db,2.608,hindi,aadha kilo cheeni bechi,Aaj haath kilo chini bechi.,3,2,4,True,False,False,True,False,True,False,False,0.5857,0.2246
+c05_priyamvada_babble_5db.wav,c05,priyamvada,babble_5db,2.608,hindi,aadha kilo cheeni bechi,Aadha ke lie us chini mein hi diya.,7,6,4,True,True,False,True,False,True,False,False,0.5781,0.2217
+c06_priyamvada_white_10db.wav,c06,priyamvada,white_10db,2.643,hinglish,maggi ka stock kitna hai,Medi ka stock kitna hai.,1,1,5,False,True,False,True,False,False,False,False,0.3688,0.1396
+c06_priyamvada_babble_5db.wav,c06,priyamvada,babble_5db,2.643,hinglish,maggi ka stock kitna hai,Megi ka stock ki tarah hai.,3,3,5,False,True,False,True,False,False,False,False,0.4022,0.1522
+c07_priyamvada_white_10db.wav,c07,priyamvada,white_10db,3.563,hinglish,pehle das bola tha ab paanch packet karo,Pahle das bola tha ab paanch packet karod.,2,2,8,True,True,False,False,True,True,False,False,0.4586,0.1287
+c07_priyamvada_babble_5db.wav,c07,priyamvada,babble_5db,3.563,hinglish,pehle das bola tha ab paanch packet karo,Pahle das mulaakaatka aur paanch packet karoge.,5,5,8,True,True,False,False,True,True,False,False,0.6554,0.1839
+c08_priyamvada_white_10db.wav,c08,priyamvada,white_10db,2.816,hinglish,do packet nahi teen packet,"Do package nahin, tin package.",4,3,5,True,True,False,False,True,True,False,False,0.4273,0.1517
+c08_priyamvada_babble_5db.wav,c08,priyamvada,babble_5db,2.816,hinglish,do packet nahi teen packet,"Ek baar package nahin, tin package.",6,5,5,True,False,True,False,True,True,False,False,0.4668,0.1658
+c09_priyamvada_white_10db.wav,c09,priyamvada,white_10db,3.061,hinglish,maggi hatao aur pasta add karo,Main hi hatao aur pasta add karo.,2,2,6,False,True,False,True,False,False,False,False,0.4408,0.144
+c09_priyamvada_babble_5db.wav,c09,priyamvada,babble_5db,3.061,hinglish,maggi hatao aur pasta add karo,Main ki hata aur paanchata add kar do.,6,6,6,False,True,True,True,False,False,False,False,0.5507,0.1799
+c10_priyamvada_white_10db.wav,c10,priyamvada,white_10db,3.143,hinglish,parle g ke bees packet add karo,Paale ji ke bis package add karo.,4,3,7,True,True,False,True,False,False,False,False,0.446,0.1419
+c10_priyamvada_babble_5db.wav,c10,priyamvada,babble_5db,3.143,hinglish,parle g ke bees packet add karo,Paarili ji ke beans packet add karna.,4,4,7,True,False,False,True,False,False,False,False,0.5179,0.1648
+c11_priyamvada_white_10db.wav,c11,priyamvada,white_10db,2.516,hinglish,do litre doodh bech diya,Do liter dood bech diya.,2,2,5,True,True,False,True,False,False,False,False,0.4063,0.1615
+c11_priyamvada_babble_5db.wav,c11,priyamvada,babble_5db,2.516,hinglish,do litre doodh bech diya,Don't leter move page way.,6,6,5,True,False,False,True,False,False,False,False,0.376,0.1495
+c12_priyamvada_white_10db.wav,c12,priyamvada,white_10db,3.479,hinglish,tata namak ke teen packet restock karo,Sata namak ke tin package restore karo.,4,3,7,True,True,False,True,False,False,False,False,0.4937,0.1419
+c12_priyamvada_babble_5db.wav,c12,priyamvada,babble_5db,3.479,hinglish,tata namak ke teen packet restock karo,Tata namak protein packet restore karoonga.,4,4,7,True,False,False,True,True,True,False,False,0.4835,0.139
+c13_priyamvada_white_10db.wav,c13,priyamvada,white_10db,2.713,hinglish,ek kilo aata add karo,Ek kilo aata add karo.,0,0,5,True,True,False,True,True,True,True,False,0.3861,0.1423
+c13_priyamvada_babble_5db.wav,c13,priyamvada,babble_5db,2.713,hinglish,ek kilo aata add karo,Ek kilo aakaash add karo.,1,1,5,True,True,False,True,False,False,False,False,0.4337,0.1599
+c14_priyamvada_white_10db.wav,c14,priyamvada,white_10db,3.398,hinglish,surf excel ka stock kitna bacha hai,Sirph ek seh saath stock kitna bacha hai?,4,4,7,False,True,True,True,False,False,False,False,0.5357,0.1576
+c14_priyamvada_babble_5db.wav,c14,priyamvada,babble_5db,3.398,hinglish,surf excel ka stock kitna bacha hai,Sirf A C ka stock itna bacha hai.,4,4,7,False,True,False,True,False,False,False,False,0.5501,0.1619
+c15_priyamvada_white_10db.wav,c15,priyamvada,white_10db,2.469,hindi,paanch sau gram daal bechi,Paanch sau gram daayi bechi.,1,1,5,True,True,False,True,False,False,False,False,0.4265,0.1727
+c15_priyamvada_babble_5db.wav,c15,priyamvada,babble_5db,2.469,hindi,paanch sau gram daal bechi,Paanch sau gram daal lijie.,1,1,5,True,True,False,True,True,True,False,False,0.4015,0.1626
+c16_priyamvada_white_10db.wav,c16,priyamvada,white_10db,2.33,hindi,barah ande bech diye,Baarah ande bech die.,2,1,4,True,True,False,True,True,True,False,False,0.3872,0.1662
+c16_priyamvada_babble_5db.wav,c16,priyamvada,babble_5db,2.33,hindi,barah ande bech diye,Bhaarat Sunday beach nahin hai.,5,5,4,True,False,False,True,False,False,False,False,0.3956,0.1698
+c17_priyamvada_white_10db.wav,c17,priyamvada,white_10db,3.41,hinglish,amul butter ke chhe packet add karo,Amount butter ke chhah package add karo.,3,3,7,True,True,False,True,False,False,False,False,0.5305,0.1556
+c17_priyamvada_babble_5db.wav,c17,priyamvada,babble_5db,3.41,hinglish,amul butter ke chhe packet add karo,Tum hi badtar ke chhah package add karo.,5,5,7,True,True,False,True,False,False,False,False,0.5645,0.1655
+c18_priyamvada_white_10db.wav,c18,priyamvada,white_10db,2.69,hindi,dhai kilo aloo bech diya,Ghaay kilo aayu bech diya.,2,2,5,True,False,False,True,False,False,False,False,0.5182,0.1927
+c18_priyamvada_babble_5db.wav,c18,priyamvada,babble_5db,2.69,hindi,dhai kilo aloo bech diya,Bhai din kaal bech diya.,3,3,5,True,False,False,True,False,False,False,False,0.4256,0.1582
+c19_priyamvada_white_10db.wav,c19,priyamvada,white_10db,2.817,english,add ten packets of maggi,Aise in package shop mein bhi.,6,6,5,True,False,False,True,False,False,False,False,0.4279,0.1519
+c19_priyamvada_babble_5db.wav,c19,priyamvada,babble_5db,2.817,english,add ten packets of maggi,Appings bank ki software ki hai.,6,6,5,True,False,False,True,False,False,False,False,0.3548,0.126
+c20_priyamvada_white_10db.wav,c20,priyamvada,white_10db,2.678,english,sell two kilos of rice,Sale 2 se loose of rice.,4,4,5,True,True,False,True,True,True,False,False,0.4252,0.1588
+c20_priyamvada_babble_5db.wav,c20,priyamvada,babble_5db,2.678,english,sell two kilos of rice,Saint close of rise.,4,4,5,True,False,False,True,False,False,False,False,0.3602,0.1345
+c21_priyamvada_white_10db.wav,c21,priyamvada,white_10db,2.4,english,how much sugar is left,How much sugar is less?,1,1,5,False,True,False,True,True,True,False,False,0.3467,0.1444
+c21_priyamvada_babble_5db.wav,c21,priyamvada,babble_5db,2.4,english,how much sugar is left,"Haan, much sugar is late.",2,2,5,False,True,False,True,True,True,False,False,0.3243,0.1351
+c22_priyamvada_white_10db.wav,c22,priyamvada,white_10db,3.119,hinglish,colgate ke do packet aur add karo,4 years ke do package aur add karo.,3,3,7,True,True,True,True,False,False,False,False,0.4794,0.1537
+c22_priyamvada_babble_5db.wav,c22,priyamvada,babble_5db,3.119,hinglish,colgate ke do packet aur add karo,Due ki do package aur add karo.,3,3,7,True,True,False,True,False,False,False,False,0.457,0.1465
+c23_priyamvada_white_10db.wav,c23,priyamvada,white_10db,2.882,hinglish,saat packet biscuit bech diye,Saam packet bis ke beach die.,5,5,5,True,False,True,True,False,False,False,False,0.3734,0.1296
+c23_priyamvada_babble_5db.wav,c23,priyamvada,babble_5db,2.882,hinglish,saat packet biscuit bech diye,Saam package list bhej die.,5,5,5,True,False,False,True,False,False,False,False,0.3517,0.122
+c24_priyamvada_white_10db.wav,c24,priyamvada,white_10db,2.713,hindi,pachchis kilo chawal aaya hai,Pachchis kilo chaaval aaya hai.,1,0,5,True,True,False,True,False,True,True,False,0.4575,0.1686
+c24_priyamvada_babble_5db.wav,c24,priyamvada,babble_5db,2.713,hindi,pachchis kilo chawal aaya hai,Pachchis kilo chaaval aaya hai.,1,0,5,True,True,False,True,False,True,True,False,0.4554,0.1679
+c25_priyamvada_white_10db.wav,c25,priyamvada,white_10db,2.852,hinglish,sabun ke chaar piece add karo,Saamun ke chaar piece add karo.,1,1,6,True,True,False,True,False,False,False,False,0.4599,0.1613
+c25_priyamvada_babble_5db.wav,c25,priyamvada,babble_5db,2.852,hinglish,sabun ke chaar piece add karo,Saamun ke raaj bhi add karo.,3,3,6,True,False,False,True,False,False,False,False,0.4549,0.1595
+c26_priyamvada_white_10db.wav,c26,priyamvada,white_10db,2.887,hinglish,teen packet maggi wapas aaye,Tin packet mein ghi baapas aae.,5,4,5,True,True,False,True,False,False,False,False,0.4972,0.1722
+c26_priyamvada_babble_5db.wav,c26,priyamvada,babble_5db,2.887,hinglish,teen packet maggi wapas aaye,Tin packet mein ghoom paapas aai.,5,4,5,True,True,False,True,False,False,False,False,0.5406,0.1873
+c27_priyamvada_white_10db.wav,c27,priyamvada,white_10db,3.015,hinglish,pasta ka stock khatam ho gaya,Paanch taar saal stock atm ho gaya.,4,4,6,False,True,True,True,False,False,False,False,0.5581,0.1851
+c27_priyamvada_babble_5db.wav,c27,priyamvada,babble_5db,3.015,hinglish,pasta ka stock khatam ho gaya,"First of all stock, aatm ho gaya.",4,4,6,False,True,False,True,False,False,False,False,0.4732,0.1569
+c28_priyamvada_white_10db.wav,c28,priyamvada,white_10db,2.713,hindi,ek darjan kele bech diye,Ek darjan ke lie bech die.,3,3,5,True,True,False,True,False,False,False,False,0.4331,0.1597
+c28_priyamvada_babble_5db.wav,c28,priyamvada,babble_5db,2.713,hindi,ek darjan kele bech diye,Ek darjan ke lie bech nahin hai.,4,4,5,True,True,False,True,False,False,False,False,0.4641,0.1711
+c29_priyamvada_white_10db.wav,c29,priyamvada,white_10db,2.817,hindi,do sau rupaye ka tel bech diya,Do sau rupe ka aage bech diya.,2,2,7,True,True,False,True,False,False,False,False,0.5289,0.1878
+c29_priyamvada_babble_5db.wav,c29,priyamvada,babble_5db,2.817,hindi,do sau rupaye ka tel bech diya,Do sau rupe ka aage bech diya.,2,2,7,True,True,False,True,False,False,False,False,0.4929,0.175
+c30_priyamvada_white_10db.wav,c30,priyamvada,white_10db,2.794,hinglish,nau packet chips add karo,Nau package chiz add karo.,2,2,5,True,True,False,True,False,False,False,False,0.4905,0.1755
+c30_priyamvada_babble_5db.wav,c30,priyamvada,babble_5db,2.794,hinglish,nau packet chips add karo,No package ships add karo.,3,3,5,True,False,False,True,False,False,False,False,0.3347,0.1198
+c01_pratham_white_10db.wav,c01,pratham,white_10db,2.574,hinglish,maggi ke dus packet add karo,Maggi ke das packet add karo.,1,1,6,True,True,False,True,True,True,False,False,0.3742,0.1454
+c01_pratham_babble_5db.wav,c01,pratham,babble_5db,2.574,hinglish,maggi ke dus packet add karo,Meghan ke das packet add karo.,2,2,6,True,True,False,True,False,False,False,False,0.4226,0.1642
+c02_pratham_white_10db.wav,c02,pratham,white_10db,2.509,hinglish,maggi ke do packet bech diye,Maggi ke do package bech kie.,2,2,6,True,True,False,True,True,True,False,False,0.4422,0.1763
+c02_pratham_babble_5db.wav,c02,pratham,babble_5db,2.509,hinglish,maggi ke do packet bech diye,Maggi ke do paakar beach bhi.,3,3,6,True,True,False,True,True,True,False,False,0.4387,0.1749
+c03_pratham_white_10db.wav,c03,pratham,white_10db,2.585,hinglish,paanch kilo chawal restock karo,Paanch kilo chaaval bhi stock karo.,3,2,5,True,True,False,True,False,True,False,False,0.4361,0.1687
+c03_pratham_babble_5db.wav,c03,pratham,babble_5db,2.585,hinglish,paanch kilo chawal restock karo,Paanch kilo chaaval bis doktantr.,3,2,5,True,True,True,True,False,True,False,False,0.4046,0.1565
+c04_pratham_white_10db.wav,c04,pratham,white_10db,2.555,hinglish,milk ke chaar packet add karna,Milk ke chaar packet add karna.,0,0,6,True,True,False,True,True,True,True,False,0.4068,0.1592
+c04_pratham_babble_5db.wav,c04,pratham,babble_5db,2.555,hinglish,milk ke chaar packet add karna,Milk ki chaar packet add karna.,1,1,6,True,True,False,True,True,True,False,False,0.4972,0.1946
+c05_pratham_white_10db.wav,c05,pratham,white_10db,2.102,hindi,aadha kilo cheeni bechi,Aadha kilo chini bechhi.,2,0,4,True,True,False,True,False,True,True,False,0.3877,0.1844
+c05_pratham_babble_5db.wav,c05,pratham,babble_5db,2.102,hindi,aadha kilo cheeni bechi,Aadha kilo chini bechie.,2,1,4,True,True,False,True,False,True,False,False,0.4092,0.1947
+c06_pratham_white_10db.wav,c06,pratham,white_10db,2.156,hinglish,maggi ka stock kitna hai,Naghi ka stock kitna hai?,1,1,5,False,True,False,True,False,False,False,False,0.4074,0.1889
+c06_pratham_babble_5db.wav,c06,pratham,babble_5db,2.156,hinglish,maggi ka stock kitna hai,Banaghan se stock kitna hai?,2,2,5,False,True,False,True,False,False,False,False,0.3976,0.1844
+c07_pratham_white_10db.wav,c07,pratham,white_10db,3.239,hinglish,pehle das bola tha ab paanch packet karo,Pahle das bola tha ab paanch packet karo.,1,1,8,True,True,False,False,True,True,False,False,0.492,0.1519
+c07_pratham_babble_5db.wav,c07,pratham,babble_5db,3.239,hinglish,pehle das bola tha ab paanch packet karo,"Pahle das bola tha, ab paanch package karo.",2,2,8,True,True,False,False,True,True,False,False,0.5398,0.1667
+c08_pratham_white_10db.wav,c08,pratham,white_10db,2.601,hinglish,do packet nahi teen packet,Do packet nahin tin packet.,2,1,5,True,True,False,False,True,True,False,False,0.3632,0.1396
+c08_pratham_babble_5db.wav,c08,pratham,babble_5db,2.601,hinglish,do packet nahi teen packet,"Do package, ek tin, darsal",4,3,5,True,True,True,False,True,True,False,False,0.4087,0.1571
+c09_pratham_white_10db.wav,c09,pratham,white_10db,2.633,hinglish,maggi hatao aur pasta add karo,Megi hataon aur pasta add kar.,3,3,6,False,True,False,True,False,False,False,False,0.457,0.1736
+c09_pratham_babble_5db.wav,c09,pratham,babble_5db,2.633,hinglish,maggi hatao aur pasta add karo,Megi hatao aur pasta add karo.,1,1,6,False,True,False,True,False,False,False,False,0.4594,0.1745
+c10_pratham_white_10db.wav,c10,pratham,white_10db,2.817,hinglish,parle g ke bees packet add karo,Bhaar mein ji ke bis packet add karo.,4,3,7,True,True,False,True,False,False,False,False,0.4613,0.1638
+c10_pratham_babble_5db.wav,c10,pratham,babble_5db,2.817,hinglish,parle g ke bees packet add karo,Vaar ne ji ke lie spacket add karo.,5,5,7,True,False,False,True,False,False,False,False,0.4941,0.1754
+c11_pratham_white_10db.wav,c11,pratham,white_10db,2.539,hinglish,do litre doodh bech diya,Do liter door bech kiya.,3,3,5,True,True,False,True,False,False,False,False,0.3692,0.1454
+c11_pratham_babble_5db.wav,c11,pratham,babble_5db,2.539,hinglish,do litre doodh bech diya,Do meter door beach diya.,3,3,5,True,True,False,True,False,False,False,False,0.3896,0.1534
+c12_pratham_white_10db.wav,c12,pratham,white_10db,2.957,hinglish,tata namak ke teen packet restock karo,Tata namak ke tin packet risk of karo.,3,2,7,True,True,False,True,True,True,False,False,0.5438,0.1839
+c12_pratham_babble_5db.wav,c12,pratham,babble_5db,2.957,hinglish,tata namak ke teen packet restock karo,Tata number ke team packages to karo.,4,4,7,True,False,True,True,False,False,False,False,0.4139,0.14
+c13_pratham_white_10db.wav,c13,pratham,white_10db,2.353,hinglish,ek kilo aata add karo,Ek kilo aata add kar.,1,1,5,True,True,False,True,True,True,False,False,0.3832,0.1629
+c13_pratham_babble_5db.wav,c13,pratham,babble_5db,2.353,hinglish,ek kilo aata add karo,Phir ki do aata add kar raha hoon.,6,6,5,True,False,True,True,True,True,False,False,0.5063,0.2152
+c14_pratham_white_10db.wav,c14,pratham,white_10db,2.818,hinglish,surf excel ka stock kitna bacha hai,Sir ek sil ka stock kitna bacha hai?,3,3,7,False,True,True,True,False,False,False,False,0.4597,0.1631
+c14_pratham_babble_5db.wav,c14,pratham,babble_5db,2.818,hinglish,surf excel ka stock kitna bacha hai,Sir ek se ka stock kitna bacha?,4,4,7,False,True,True,True,False,False,False,False,0.4216,0.1496
+c15_pratham_white_10db.wav,c15,pratham,white_10db,2.144,hindi,paanch sau gram daal bechi,Paanch sau gram daal bhi ji.,2,2,5,True,True,False,True,True,True,False,False,0.3855,0.1798
+c15_pratham_babble_5db.wav,c15,pratham,babble_5db,2.144,hindi,paanch sau gram daal bechi,Paanch sau gram taalvir ji.,2,2,5,True,True,False,True,False,False,False,False,0.3842,0.1792
+c16_pratham_white_10db.wav,c16,pratham,white_10db,2.119,hindi,barah ande bech diye,Baarah and bech die.,3,2,4,True,True,False,True,False,False,False,False,0.3812,0.1799
+c16_pratham_babble_5db.wav,c16,pratham,babble_5db,2.119,hindi,barah ande bech diye,Baarah ande bech di.,2,1,4,True,True,False,True,True,True,False,False,0.4307,0.2033
+c17_pratham_white_10db.wav,c17,pratham,white_10db,3.015,hinglish,amul butter ke chhe packet add karo,Amool butter ke chhah packet add karo.,2,1,7,True,True,False,True,False,True,False,False,0.4687,0.1554
+c17_pratham_babble_5db.wav,c17,pratham,babble_5db,3.015,hinglish,amul butter ke chhe packet add karo,Amrn patr ke chhah package add karo.,4,4,7,True,True,False,True,False,False,False,False,0.558,0.1851
+c18_pratham_white_10db.wav,c18,pratham,white_10db,2.328,hindi,dhai kilo aloo bech diya,Dhai kilo aaloo bridge kiya.,3,2,5,True,True,False,True,False,True,False,False,0.429,0.1843
+c18_pratham_babble_5db.wav,c18,pratham,babble_5db,2.328,hindi,dhai kilo aloo bech diya,Bhai ki dubaara beach kiya.,5,5,5,True,False,False,True,False,False,False,False,0.4281,0.1839
+c19_pratham_white_10db.wav,c19,pratham,white_10db,2.125,english,add ten packets of maggi,Atten package of naegi.,4,4,5,True,False,False,True,False,False,False,False,0.3625,0.1706
+c19_pratham_babble_5db.wav,c19,pratham,babble_5db,2.125,english,add ten packets of maggi,HN package of maegi.,4,4,5,True,False,False,True,False,False,False,False,0.3891,0.1831
+c20_pratham_white_10db.wav,c20,pratham,white_10db,2.283,english,sell two kilos of rice,Sid to kilo of rice,3,3,5,True,True,False,True,True,True,False,False,0.3285,0.1439
+c20_pratham_babble_5db.wav,c20,pratham,babble_5db,2.283,english,sell two kilos of rice,C 02:00 of price hai.,5,5,5,True,True,True,True,False,False,False,False,0.3694,0.1618
+c21_pratham_white_10db.wav,c21,pratham,white_10db,1.831,english,how much sugar is left,How much sugar is left?,0,0,5,False,True,False,True,True,True,True,False,0.2922,0.1596
+c21_pratham_babble_5db.wav,c21,pratham,babble_5db,1.831,english,how much sugar is left,How much sugar islie prati?,2,2,5,False,True,False,True,True,True,False,False,0.3505,0.1914
+c22_pratham_white_10db.wav,c22,pratham,white_10db,2.926,hinglish,colgate ke do packet aur add karo,Kul bhi ke do packet aur add karo.,2,2,7,True,True,False,True,False,False,False,False,0.4796,0.1639
+c22_pratham_babble_5db.wav,c22,pratham,babble_5db,2.926,hinglish,colgate ke do packet aur add karo,Kaun thi ki doosra ek aur add karo.,5,5,7,True,False,True,True,False,False,False,False,0.5055,0.1728
+c23_pratham_white_10db.wav,c23,pratham,white_10db,2.53,hinglish,saat packet biscuit bech diye,Saat package bis ki beach kie.,5,5,5,True,True,True,True,False,False,False,False,0.4229,0.1672
+c23_pratham_babble_5db.wav,c23,pratham,babble_5db,2.53,hinglish,saat packet biscuit bech diye,Saath packet riski bech kiya.,3,3,5,True,False,False,True,False,False,False,False,0.4503,0.178
+c24_pratham_white_10db.wav,c24,pratham,white_10db,2.092,hindi,pachchis kilo chawal aaya hai,Pachchis kilo chaablaaya hai.,2,2,5,True,True,False,True,False,False,False,False,0.4162,0.199
+c24_pratham_babble_5db.wav,c24,pratham,babble_5db,2.092,hindi,pachchis kilo chawal aaya hai,Pachchis kilo chhaap banaaya hai kar,3,3,5,True,True,False,True,False,False,False,False,0.4611,0.2204
+c25_pratham_white_10db.wav,c25,pratham,white_10db,2.516,hinglish,sabun ke chaar piece add karo,Saavan ke chaar ki side karo.,3,3,6,True,True,False,True,False,False,False,False,0.4728,0.1879
+c25_pratham_babble_5db.wav,c25,pratham,babble_5db,2.516,hinglish,sabun ke chaar piece add karo,Saavan ke chaar ki set karna.,4,4,6,True,True,False,True,False,False,False,False,0.4024,0.1599
+c26_pratham_white_10db.wav,c26,pratham,white_10db,2.353,hinglish,teen packet maggi wapas aaye,Tin packet Maggi vaapas aae.,3,1,5,True,True,False,True,True,True,False,False,0.4831,0.2053
+c26_pratham_babble_5db.wav,c26,pratham,babble_5db,2.353,hinglish,teen packet maggi wapas aaye,Tin packet mein hi vaapas aae.,5,3,5,True,True,False,True,False,False,False,False,0.4906,0.2085
+c27_pratham_white_10db.wav,c27,pratham,white_10db,2.516,hinglish,pasta ka stock khatam ho gaya,Aastha ka stock khatm ho gaya.,2,2,6,False,True,False,True,False,False,False,False,0.4882,0.194
+c27_pratham_babble_5db.wav,c27,pratham,babble_5db,2.516,hinglish,pasta ka stock khatam ho gaya,Paas ka kaam stock khatm ho gaya.,3,3,6,False,True,False,True,False,False,False,False,0.5126,0.2038
+c28_pratham_white_10db.wav,c28,pratham,white_10db,2.416,hindi,ek darjan kele bech diye,Ek darjan ke lie beach kie.,4,4,5,True,True,False,True,False,False,False,False,0.4456,0.1845
+c28_pratham_babble_5db.wav,c28,pratham,babble_5db,2.416,hindi,ek darjan kele bech diye,Ek darjan ke lie bhej diya.,4,4,5,True,True,False,True,False,False,False,False,0.4532,0.1876
+c29_pratham_white_10db.wav,c29,pratham,white_10db,2.562,hindi,do sau rupaye ka tel bech diya,Do sau rupai ka tel bech diya.,1,1,7,True,True,False,True,True,True,False,False,0.4669,0.1822
+c29_pratham_babble_5db.wav,c29,pratham,babble_5db,2.562,hindi,do sau rupaye ka tel bech diya,Do sau rupe ka tel bhej diya.,2,2,7,True,True,False,True,True,True,False,False,0.4842,0.189
+c30_pratham_white_10db.wav,c30,pratham,white_10db,2.365,hinglish,nau packet chips add karo,Nau paathy chicks add karo.,2,2,5,True,True,False,True,False,False,False,False,0.3758,0.1589
+c30_pratham_babble_5db.wav,c30,pratham,babble_5db,2.365,hinglish,nau packet chips add karo,"Now, baaki chips add karo.",2,2,5,True,False,False,True,True,True,False,False,0.4068,0.172

@@ -1,0 +1,180 @@
+{
+  "runtime": "sherpa-onnx 1.12.29 (python, desktop CPU)",
+  "language": "hi",
+  "threads": 2,
+  "init_s": 0.984,
+  "rss_mb": {
+    "before_init": 37.0,
+    "after_init": 235.7,
+    "peak": 774.2
+  },
+  "overall": {
+    "clips": 360,
+    "wer_raw": 0.425,
+    "wer_roman_norm": 0.3718,
+    "quantity_acc": 0.8233,
+    "spurious_quantity_rate": 0.0889,
+    "product_acc_strict": 0.3393,
+    "product_acc_norm": 0.4554,
+    "command_acc": 0.1194,
+    "devanagari_outputs": 0,
+    "decode_median_s": 0.462,
+    "rtf_median": 0.181
+  },
+  "by_condition": {
+    "clean": {
+      "clips": 90,
+      "wer_raw": 0.3235,
+      "wer_roman_norm": 0.2604,
+      "quantity_acc": 0.9067,
+      "spurious_quantity_rate": 0.0778,
+      "product_acc_strict": 0.4048,
+      "product_acc_norm": 0.5476,
+      "command_acc": 0.1889,
+      "devanagari_outputs": 0,
+      "decode_median_s": 0.492,
+      "rtf_median": 0.188
+    },
+    "fast": {
+      "clips": 90,
+      "wer_raw": 0.3136,
+      "wer_roman_norm": 0.2544,
+      "quantity_acc": 0.9067,
+      "spurious_quantity_rate": 0.0444,
+      "product_acc_strict": 0.4643,
+      "product_acc_norm": 0.5833,
+      "command_acc": 0.1667,
+      "devanagari_outputs": 0,
+      "decode_median_s": 0.491,
+      "rtf_median": 0.205
+    },
+    "white_10db": {
+      "clips": 90,
+      "wer_raw": 0.432,
+      "wer_roman_norm": 0.3767,
+      "quantity_acc": 0.88,
+      "spurious_quantity_rate": 0.0889,
+      "product_acc_strict": 0.3095,
+      "product_acc_norm": 0.4286,
+      "command_acc": 0.1,
+      "devanagari_outputs": 0,
+      "decode_median_s": 0.442,
+      "rtf_median": 0.164
+    },
+    "babble_5db": {
+      "clips": 90,
+      "wer_raw": 0.6312,
+      "wer_roman_norm": 0.5957,
+      "quantity_acc": 0.6,
+      "spurious_quantity_rate": 0.1444,
+      "product_acc_strict": 0.1786,
+      "product_acc_norm": 0.2619,
+      "command_acc": 0.0222,
+      "devanagari_outputs": 0,
+      "decode_median_s": 0.448,
+      "rtf_median": 0.172
+    }
+  },
+  "by_language": {
+    "hinglish": {
+      "clips": 240,
+      "wer_raw": 0.4041,
+      "wer_roman_norm": 0.3522,
+      "quantity_acc": 0.849,
+      "spurious_quantity_rate": 0.1125,
+      "product_acc_strict": 0.287,
+      "product_acc_norm": 0.3657,
+      "command_acc": 0.0708,
+      "devanagari_outputs": 0,
+      "decode_median_s": 0.482,
+      "rtf_median": 0.177
+    },
+    "hindi": {
+      "clips": 84,
+      "wer_raw": 0.4381,
+      "wer_roman_norm": 0.3595,
+      "quantity_acc": 0.869,
+      "spurious_quantity_rate": 0.0119,
+      "product_acc_strict": 0.3333,
+      "product_acc_norm": 0.5952,
+      "command_acc": 0.25,
+      "devanagari_outputs": 0,
+      "decode_median_s": 0.459,
+      "rtf_median": 0.19
+    },
+    "english": {
+      "clips": 36,
+      "wer_raw": 0.5611,
+      "wer_roman_norm": 0.5556,
+      "quantity_acc": 0.4583,
+      "spurious_quantity_rate": 0.1111,
+      "product_acc_strict": 0.6667,
+      "product_acc_norm": 0.6667,
+      "command_acc": 0.1389,
+      "devanagari_outputs": 0,
+      "decode_median_s": 0.366,
+      "rtf_median": 0.166
+    }
+  },
+  "by_voice": {
+    "pratham": {
+      "clips": 120,
+      "wer_raw": 0.4201,
+      "wer_roman_norm": 0.3669,
+      "quantity_acc": 0.87,
+      "spurious_quantity_rate": 0.1083,
+      "product_acc_strict": 0.3571,
+      "product_acc_norm": 0.4643,
+      "command_acc": 0.0667,
+      "devanagari_outputs": 0,
+      "decode_median_s": 0.423,
+      "rtf_median": 0.175
+    },
+    "priyamvada": {
+      "clips": 120,
+      "wer_raw": 0.4467,
+      "wer_roman_norm": 0.3964,
+      "quantity_acc": 0.79,
+      "spurious_quantity_rate": 0.1083,
+      "product_acc_strict": 0.2946,
+      "product_acc_norm": 0.4107,
+      "command_acc": 0.125,
+      "devanagari_outputs": 0,
+      "decode_median_s": 0.49,
+      "rtf_median": 0.174
+    },
+    "rohan": {
+      "clips": 120,
+      "wer_raw": 0.4083,
+      "wer_roman_norm": 0.3521,
+      "quantity_acc": 0.81,
+      "spurious_quantity_rate": 0.05,
+      "product_acc_strict": 0.3661,
+      "product_acc_norm": 0.4911,
+      "command_acc": 0.1667,
+      "devanagari_outputs": 0,
+      "decode_median_s": 0.506,
+      "rtf_median": 0.202
+    }
+  },
+  "latency": {
+    "2s": {
+      "median_s": 0.365,
+      "max_s": 0.386
+    },
+    "5s": {
+      "median_s": 0.743,
+      "max_s": 0.778
+    },
+    "10s": {
+      "median_s": 1.326,
+      "max_s": 1.642
+    },
+    "resample_check": {
+      "text_16k": "Meggi ke das packet add karo.",
+      "text_48k": "Meggi ke das packet add karo."
+    },
+    "silence_2s_text": "uhh",
+    "warm_reinit_s": 0.798
+  }
+}
