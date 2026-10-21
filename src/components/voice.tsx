@@ -4,7 +4,7 @@ import { Platform } from 'react-native';
 
 import { Btn, Card, T, type MicState } from '@/components/ui';
 import { useT } from '@/lib/i18n';
-import { HINGLISH_SWIFT, totalDownloadBytes, useVoiceCommand, type STTResult, type VoiceCommandState } from '@models/stt';
+import { HINGLISH_SWIFT, totalDownloadBytes, useVoiceCommand, type STTResult } from '@models/stt';
 
 const MODEL_MB = Math.round(totalDownloadBytes(HINGLISH_SWIFT) / 2 ** 20);
 
