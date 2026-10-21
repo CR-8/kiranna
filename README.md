@@ -1,4 +1,4 @@
-# Kirana POS
+# Welcome to your Expo app 👋
 
 Offline-first point-of-sale and inventory for small Indian kirana stores. Expo SDK 58 + Expo Router, runs on web and Android.
 
