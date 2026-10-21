@@ -41,3 +41,8 @@ example
 # generated native folders
 /ios
 /android
+
+# downloaded model files and generated evaluation audio (reproducible, not committed)
+models/.cache/
+models/stt/eval/audio/
+__pycache__/
