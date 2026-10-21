@@ -1,7 +1,7 @@
 // Pure billing/inventory logic. No React, no storage — so it runs under `node scripts/check-engine.ts`.
 // Money = integer paise. Quantity = integer thousandths ("milli") so 0.5 kg is exact.
 
-export type Unit = 'pcs' | 'pkt' | 'kg' | 'L';
+export type Unit = 'pcs' | 'pkt' | 'box' | 'g' | 'kg' | 'ml' | 'L';
 export type Lang = 'en' | 'hi';
 export type PayMethod = 'cash' | 'upi' | 'none';
 
@@ -113,7 +113,27 @@ export function parsePaise(s: string, allowZero = false): number | null {
   return Math.round(n * 100);
 }
 
-export const stepFor = (u: Unit) => (u === 'kg' || u === 'L' ? 500 : 1000);
+export const stepFor = (u: Unit) => (u === 'kg' || u === 'L' ? 500 : u === 'g' || u === 'ml' ? 100_000 : 1000);
+
+// Only same-family units convert (weight ↔ weight, volume ↔ volume). Anything else is never guessed.
+const FAMILY: Partial<Record<Unit, [family: 'mass' | 'volume', perBase: number]>> = {
+  g: ['mass', 1],
+  kg: ['mass', 1000],
+  ml: ['volume', 1],
+  L: ['volume', 1000],
+};
+const UNIT_WORD: Record<string, Unit> = { g: 'g', gm: 'g', gram: 'g', kg: 'kg', ml: 'ml', l: 'L', ltr: 'L', litre: 'L' };
+
+/** Quantity typed for a product sold in `unit`: "2" → 2 units; "500g" on a kg item → 0.5 kg; "2kg" on a packet item → null. */
+export function parseQtyIn(s: string, unit: Unit): number | null {
+  const m = s.trim().toLowerCase().match(/^([\d.,]+)\s*([a-z]*)$/);
+  if (!m) return null;
+  const n = parseQty(m[1]);
+  if (n === null || !m[2]) return n;
+  const from = FAMILY[UNIT_WORD[m[2]]];
+  const to = FAMILY[unit];
+  return from && to && from[0] === to[0] ? Math.round((n * from[1]) / to[1]) : null;
+}
 
 // ---------- helpers ----------
 export const uid = () => Date.now().toString(36) + Math.random().toString(36).slice(2, 8);
@@ -135,6 +155,21 @@ export function searchProducts(products: Product[], query: string): Product[] {
     if (score) scored.push([score, p]);
   }
   return scored.sort((a, b) => b[0] - a[0] || a[1].name.localeCompare(b[1].name)).map((x) => x[1]);
+}
+
+/** Counter suggestions: what was sold most recently first, then the catalog A–Z, capped. */
+export function recentProducts(s: State, limit = 12): Product[] {
+  const out: Product[] = [];
+  const seen = new Set<string>();
+  const take = (p?: Product) => {
+    if (p && !seen.has(p.id) && out.length < limit) {
+      seen.add(p.id);
+      out.push(p);
+    }
+  };
+  for (const b of confirmedBills(s)) for (const i of b.items) take(s.products.find((p) => p.id === i.productId));
+  [...s.products].sort((a, b) => a.name.localeCompare(b.name)).forEach(take);
+  return out;
 }
 
 export const findByBarcode = (products: Product[], code: string) =>
@@ -389,21 +424,21 @@ export function receiptText(shopName: string, sale: Sale, payLine: string | null
 type Seed = [name: string, aliases: string[], unit: Unit, pack: string | undefined, price: number, cost: number, stock: number, low: number, barcode?: string];
 
 const SEED: Seed[] = [
-  ['Maggi Masala Noodles', ['maggi', 'noodles', 'instant noodles'], 'pkt', '70 g', 14, 11.5, 40, 10, '8901058852134'],
+  ['Maggi Masala Noodles', ['maggi', 'noodles', 'instant noodles', 'मैगी', 'नूडल्स'], 'pkt', '70 g', 14, 11.5, 40, 10, '8901058852134'],
   ['Maggi Atta Noodles', ['maggi atta', 'atta noodles'], 'pkt', '75 g', 16, 13, 25, 10],
   ['Pasta Penne', ['pasta'], 'pkt', '500 g', 85, 70, 12, 5, '0123456789012'],
-  ['Aashirvaad Atta', ['aata', 'atta', 'flour', 'gehu ka atta'], 'pkt', '5 kg', 285, 255, 15, 5],
-  ['Loose Atta', ['aata', 'atta loose'], 'kg', undefined, 52, 46, 30, 10],
-  ['Amul Milk', ['doodh', 'milk', 'dudh'], 'pkt', '500 ml', 29, 27, 24, 8, '8901262010016'],
-  ['Parle-G Biscuit', ['biscuit', 'biscuits', 'parle'], 'pkt', '800 g', 80, 70, 18, 6, '8901719101014'],
-  ['Good Day Biscuit', ['biscuit', 'biscuits', 'britannia'], 'pkt', '200 g', 40, 34, 20, 6],
-  ['Tata Salt', ['namak', 'salt'], 'pkt', '1 kg', 28, 24, 30, 8],
-  ['Sugar', ['cheeni', 'shakkar'], 'kg', undefined, 46, 41, 40, 10],
-  ['Toor Dal', ['dal', 'arhar', 'tuvar'], 'kg', undefined, 160, 142, 20, 5],
-  ['Fortune Sunflower Oil', ['tel', 'oil', 'refined oil'], 'L', '1 L', 145, 130, 14, 5],
-  ['Tata Tea Gold', ['chai', 'chai patti', 'tea'], 'pkt', '250 g', 150, 132, 10, 4],
-  ['Surf Excel', ['detergent', 'washing powder'], 'pkt', '1 kg', 135, 118, 9, 4],
-  ['Lifebuoy Soap', ['sabun', 'soap'], 'pcs', '100 g', 32, 27, 36, 12],
+  ['Aashirvaad Atta', ['aata', 'atta', 'flour', 'gehu ka atta', 'आटा'], 'pkt', '5 kg', 285, 255, 15, 5],
+  ['Loose Atta', ['aata', 'atta loose', 'आटा', 'खुला आटा'], 'kg', undefined, 52, 46, 30, 10],
+  ['Amul Milk', ['doodh', 'milk', 'dudh', 'दूध'], 'pkt', '500 ml', 29, 27, 24, 8, '8901262010016'],
+  ['Parle-G Biscuit', ['biscuit', 'biscuits', 'parle', 'बिस्कुट', 'पारले'], 'pkt', '800 g', 80, 70, 18, 6, '8901719101014'],
+  ['Good Day Biscuit', ['biscuit', 'biscuits', 'britannia', 'बिस्कुट'], 'pkt', '200 g', 40, 34, 20, 6],
+  ['Tata Salt', ['namak', 'salt', 'नमक'], 'pkt', '1 kg', 28, 24, 30, 8],
+  ['Sugar', ['cheeni', 'shakkar', 'sugar', 'चीनी', 'शक्कर'], 'kg', undefined, 46, 41, 40, 10],
+  ['Toor Dal', ['dal', 'arhar', 'tuvar', 'दाल', 'अरहर'], 'kg', undefined, 160, 142, 20, 5],
+  ['Fortune Sunflower Oil', ['tel', 'oil', 'refined oil', 'तेल'], 'L', '1 L', 145, 130, 14, 5],
+  ['Tata Tea Gold', ['chai', 'chai patti', 'tea', 'चाय', 'चायपत्ती'], 'pkt', '250 g', 150, 132, 10, 4],
+  ['Surf Excel', ['detergent', 'washing powder', 'सर्फ', 'डिटर्जेंट'], 'pkt', '1 kg', 135, 118, 9, 4],
+  ['Lifebuoy Soap', ['sabun', 'soap', 'साबुन'], 'pcs', '100 g', 32, 27, 36, 12],
 ];
 
 export function newState(deviceId: string, now: number): State {

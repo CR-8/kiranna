@@ -17,6 +17,15 @@ assert.equal(E.parseQty('0'), null);
 assert.equal(E.parsePaise('12.5'), 1250);
 assert.equal(E.lineTotal(5200, 1500), 7800); // 1.5 kg @ ₹52
 
+// units: same-family conversion only, never guessed across families
+assert.equal(E.parseQtyIn('500g', 'kg'), 500); // 0.5 kg
+assert.equal(E.parseQtyIn('1.5 kg', 'g'), 1_500_000);
+assert.equal(E.parseQtyIn('250 ml', 'L'), 250);
+assert.equal(E.parseQtyIn('2', 'kg'), 2000);
+assert.equal(E.parseQtyIn('2kg', 'pkt'), null);
+assert.equal(E.parseQtyIn('1l', 'kg'), null);
+assert.equal(E.parseQtyIn('abc', 'kg'), null);
+
 // draft: add / edit / remove / replace, stock untouched
 let r = E.startSale(s, now);
 s = r.state;
@@ -65,6 +74,12 @@ assert.equal(E.stockStatus(rs.products.find((x) => x.id === p.id)!), 'OK');
 // search: aliases, no variant conflation
 assert.ok(E.searchProducts(after.products, 'aata').length >= 2);
 assert.equal(E.searchProducts(after.products, 'maggi atta')[0].name, 'Maggi Atta Noodles');
+
+// suggestions: last sold first, then catalog A–Z, no duplicates, capped
+const rec = E.recentProducts(after, 5);
+assert.equal(rec.length, 5);
+assert.deepEqual(rec.slice(0, 2).map((x) => x.id), [pasta.id, maggi.id]);
+assert.equal(new Set(rec.map((x) => x.id)).size, 5);
 
 // report
 const sum = E.todaySummary(after, now);

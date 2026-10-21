@@ -1,42 +1,39 @@
-import { useRouter } from 'expo-router';
+import { useState } from 'react';
 
-import { Btn, Card, Row, Screen, T } from '@/components/ui';
-import { pendingEvents } from '@/lib/engine';
+import { Btn, Card, Row, Screen, SyncStatus, T } from '@/components/ui';
 import { fmtDateTime, useT } from '@/lib/i18n';
 import { useApp } from '@/lib/store';
-import { transport } from '@/lib/sync';
+import { runSync, transport, type SyncResult } from '@/lib/sync';
 
+/** One screen: this phone, who is nearby, what is pending, one button. States are never faked. */
 export default function Sync() {
   const t = useT();
-  const router = useRouter();
   const app = useApp();
+  const [r, setR] = useState<SyncResult | null>(null);
+  const failed = r?.status === 'FAILED';
 
   return (
-    <Screen title={t('sync')}>
+    <Screen
+      title={t('sync')}
+      footer={<Btn label={failed ? t('retry') : t('connect')} onPress={() => setR(runSync())} />}>
       <Card>
-        <T v="caption" c="ash">{t('thisDevice')}</T>
-        <T v="h3">{app.shopName}</T>
-        <T c="ash">ID {app.deviceId.slice(-6).toUpperCase()}</T>
-      </Card>
-
-      <Card wash>
-        <T v="caption" c="ash">{t('connectivity')}</T>
-        <T v="sub">{transport.available ? t('ready') : t('notAvailable')}</T>
-        {!transport.available ? <T c="ash">{t(transport.reason)}</T> : null}
-        <T c="ash">{t('localStillWorks')}</T>
-      </Card>
-
-      <Card>
-        <T v="caption" c="ash">{t('nearbyDevices')}</T>
-        <T v="sub">{t('noneFound')}</T>
-        <T v="caption" c="ash">{t('trustedDevices')}</T>
-        <T v="sub">{t('noneTrusted')}</T>
+        <T v="h2">{t(`st_${r ? r.status : 'IDLE'}`)}</T>
+        {r?.reason || !transport.available ? <T c="ash">{t(r?.reason ?? transport.reason)}</T> : null}
+        {failed ? <T v="sub">{t('syncCouldNot')}</T> : null}
       </Card>
 
       <Card>
         <Row style={{ justifyContent: 'space-between' }}>
-          <T c="ash">{t('pendingChanges')}</T>
-          <T v="h3">{pendingEvents(app)}</T>
+          <T c="ash">{t('thisDevice')}</T>
+          <T v="sub">{app.shopName}</T>
+        </Row>
+        <Row style={{ justifyContent: 'space-between' }}>
+          <T c="ash">{t('nearbyDevices')}</T>
+          <T v="sub">{t('noneFound')}</T>
+        </Row>
+        <Row style={{ justifyContent: 'space-between' }}>
+          <T c="ash">{t('trustedDevices')}</T>
+          <T v="sub">{t('noneTrusted')}</T>
         </Row>
         <Row style={{ justifyContent: 'space-between' }}>
           <T c="ash">{t('lastSync')}</T>
@@ -44,10 +41,8 @@ export default function Sync() {
         </Row>
       </Card>
 
-      <Row>
-        <Btn kind="outline" label={t('connect')} disabled style={{ flex: 1 }} />
-        <Btn label={t('syncNow')} onPress={() => router.push('/sync/result')} style={{ flex: 1 }} />
-      </Row>
+      <SyncStatus />
+      <T c="ash">{t('localStillWorks')}</T>
     </Screen>
   );
 }

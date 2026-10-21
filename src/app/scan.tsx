@@ -3,19 +3,24 @@ import { useFocusEffect, useLocalSearchParams, useRouter } from 'expo-router';
 import { useCallback, useRef, useState } from 'react';
 import { Linking, Platform, View } from 'react-native';
 
+import { RestockForm } from '@/components/restock';
 import { useQtyLabel } from '@/components/sale';
 import { Btn, Card, Field, Row, Screen, T } from '@/components/ui';
 import { C, R } from '@/constants/theme';
-import { fmtMoney, findByBarcode, type Product } from '@/lib/engine';
+import { findByBarcode, type Product } from '@/lib/engine';
 import { useT } from '@/lib/i18n';
 import { actions, useApp } from '@/lib/store';
 
 interface Result {
   code: string;
-  product?: Product;
+  product: Product;
   added: boolean;
 }
 
+/**
+ * Billing mode (?saleId): a known code goes straight onto that bill.
+ * Stock mode: a known code opens RESTOCK right here; an unknown code opens the compact registration form.
+ */
 export default function Scan() {
   const t = useT();
   const router = useRouter();
@@ -41,8 +46,9 @@ export default function Scan() {
     if (!code || locked.current) return;
     locked.current = true;
     const product = findByBarcode(app.products, code);
+    if (!product) return router.push(`/product/new?barcode=${encodeURIComponent(code)}`);
     let added = false;
-    if (product && saleId) {
+    if (saleId) {
       try {
         actions.addItem(saleId, product.id);
         added = true;
@@ -56,34 +62,29 @@ export default function Scan() {
   const granted = perm?.granted;
 
   return (
-    <Screen title={t('scanTitle')} footer={<Btn kind="outline" label={t('cancel')} onPress={() => router.back()} />}>
+    <Screen title={t('scanTitle')} scroll={!!res || !granted || camError}>
       {res ? (
-        <Card>
-          <T v="caption" c="ash">{res.code}</T>
-          {res.product ? (
-            <>
-              <T v="h2">{res.product.name}</T>
-              <T v="sub">
-                {fmtMoney(res.product.pricePaise)} · {t('stockLabel')} {qtyLabel(res.product.stock, res.product.unit)}
-              </T>
-              {res.added ? <T v="sub">✓ {t('addedToSale')}</T> : null}
-              {!saleId ? <Btn label={t('restock')} onPress={() => router.push(`/product/${res.product!.id}`)} /> : null}
-            </>
+        <>
+          <Card>
+            <T v="caption" c="ash">{res.code}</T>
+            <T v="h3">{res.product.name}</T>
+            <T c="ash">
+              {t('stockLabel')} {qtyLabel(res.product.stock, res.product.unit)}
+            </T>
+            {res.added ? <T v="sub">✓ {t('addedToSale')}</T> : null}
+          </Card>
+          {saleId ? (
+            <Row>
+              <Btn kind="outline" label={t('scanNext')} onPress={again} style={{ flex: 1 }} />
+              <Btn label={t('done')} onPress={() => router.back()} style={{ flex: 1 }} />
+            </Row>
           ) : (
-            <>
-              <T v="h3">{t('unknownBarcode')}</T>
-              <T c="ash">{t('unknownBarcodeHint')}</T>
-              <Btn label={t('registerProduct')} onPress={() => router.push(`/product/new?barcode=${encodeURIComponent(res.code)}`)} />
-            </>
+            <RestockForm p={res.product} onDone={again} onCancel={again} />
           )}
-          <Row>
-            <Btn kind="outline" label={t('scanNext')} onPress={again} style={{ flex: 1 }} />
-            {saleId ? <Btn kind="outline" label={t('done')} onPress={() => router.back()} style={{ flex: 1 }} /> : null}
-          </Row>
-        </Card>
+        </>
       ) : granted && !camError ? (
         <>
-          <View style={{ height: 320, borderRadius: R.card, overflow: 'hidden', backgroundColor: C.obsidian }}>
+          <View style={{ flex: 1, minHeight: 200, borderRadius: R.card, overflow: 'hidden', backgroundColor: C.obsidian }}>
             <CameraView
               style={{ flex: 1 }}
               facing="back"
@@ -93,10 +94,10 @@ export default function Scan() {
               onMountError={() => setCamError(true)}
             />
           </View>
-          <T c="ash">{t('scanGuide')}</T>
-          {Platform.OS !== 'web' ? (
-            <Btn kind="wash" label={torch ? t('torchOff') : t('torchOn')} onPress={() => setTorch((v) => !v)} />
-          ) : null}
+          <Row style={{ justifyContent: 'space-between' }}>
+            <T c="ash" style={{ flex: 1 }}>{t('scanGuide')}</T>
+            {Platform.OS !== 'web' ? <Btn kind="wash" size="sm" label={torch ? t('torchOff') : t('torchOn')} onPress={() => setTorch((v) => !v)} /> : null}
+          </Row>
         </>
       ) : (
         <Card wash>
@@ -120,17 +121,19 @@ export default function Scan() {
       )}
 
       {!res ? (
-        <Card>
-          <Field
-            label={t('enterBarcode')}
-            value={manual}
-            onChangeText={setManual}
-            keyboardType="number-pad"
-            autoCapitalize="none"
-            onSubmitEditing={() => handle(manual)}
-          />
+        <Row style={{ alignItems: 'flex-end' }}>
+          <View style={{ flex: 1 }}>
+            <Field
+              label={t('enterBarcode')}
+              value={manual}
+              onChangeText={setManual}
+              keyboardType="number-pad"
+              autoCapitalize="none"
+              onSubmitEditing={() => handle(manual)}
+            />
+          </View>
           <Btn kind="outline" label={t('lookup')} onPress={() => handle(manual)} disabled={!manual.trim()} />
-        </Card>
+        </Row>
       ) : null}
     </Screen>
   );
