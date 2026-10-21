@@ -39,6 +39,13 @@
           "cameraPermission": "Kirana POS uses the camera only to scan product barcodes.",
           "recordAudioAndroid": false
         }
+      ],
+      [
+        "expo-audio",
+        {
+          "microphonePermission": "Allow $(PRODUCT_NAME) to use the microphone for offline voice commands.",
+          "recordAudioAndroid": true
+        }
       ]
     ],
     "experiments": {
