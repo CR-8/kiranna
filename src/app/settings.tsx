@@ -6,6 +6,7 @@ import { Platform } from 'react-native';
 
 import { Btn, Card, Field, LanguageSelector, Row, Screen, T } from '@/components/ui';
 import { useT } from '@/lib/i18n';
+import { reconcile } from '@/lib/engine';
 import { STORAGE_ENGINE } from '@/lib/storage';
 import { actions, useApp } from '@/lib/store';
 import { useModelInstall } from '@models/stt';
@@ -123,6 +124,11 @@ export default function Settings() {
         <T c="ash">
           {app.products.length} {t('products')} · {app.sales.filter((s) => s.status === 'confirmed').length} {t('bills')}
         </T>
+      </Card>
+
+      <Card>
+        <T v="h3">{t('stockCheck')}</T>
+        <T c="ash">{reconcile(app).length ? t('stockCheckBad', { n: reconcile(app).length }) : t('stockCheckOk')}</T>
       </Card>
 
       <Card>

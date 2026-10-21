@@ -9,12 +9,14 @@ export default function More() {
   const t = useT();
   const router = useRouter();
   const items: [string, string, Href][] = [
-    [t('sync'), t('syncHint'), '/sync'],
-    [t('todaysSales'), t('todayHint'), '/today'],
+    [t('productsTitle'), t('productsHint'), '/products'],
+    [t('purchases'), t('purchasesHint'), '/purchases'],
+    [t('paymentSummary'), t('paymentsHint'), '/payments'],
+    [t('syncDevices'), t('syncHint'), '/sync'],
     [t('settings'), t('settingsHint'), '/settings'],
   ];
   return (
-    <Screen title={t('more')} tab="more" back={false}>
+    <Screen title={t('more')} tab="more">
       {items.map(([title, hint, href]) => (
         <Pressable
           key={title}
@@ -22,8 +24,9 @@ export default function More() {
           accessibilityLabel={title}
           onPress={() => router.push(href)}
           style={({ pressed }) => ({
-            minHeight: 80,
-            padding: 16,
+            minHeight: 68,
+            paddingHorizontal: 16,
+            paddingVertical: 10,
             justifyContent: 'center',
             gap: 2,
             borderRadius: R.card,
@@ -31,7 +34,7 @@ export default function More() {
             borderColor: C.smoke,
             opacity: pressed ? 0.75 : 1,
           })}>
-          <T v="h3">{title}</T>
+          <T v="sub">{title}</T>
           <T c="ash">{hint}</T>
         </Pressable>
       ))}

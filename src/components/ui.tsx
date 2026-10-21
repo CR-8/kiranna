@@ -61,8 +61,8 @@ export function Card({ children, wash, style }: { children: ReactNode; wash?: bo
   );
 }
 
-export function Tag({ label, kind = 'plain' }: { label: string; kind?: 'plain' | 'alert' | 'active' }) {
-  const bg = kind === 'alert' ? C.ink : kind === 'active' ? C.accent : C.paper;
+export function Tag({ label, kind = 'plain' }: { label: string; kind?: 'plain' | 'alert' | 'active' | 'warn' }) {
+  const bg = kind === 'alert' ? C.ink : kind === 'active' ? C.accent : kind === 'warn' ? C.bone : C.paper;
   return (
     <View
       style={{
@@ -70,8 +70,8 @@ export function Tag({ label, kind = 'plain' }: { label: string; kind?: 'plain' |
         paddingHorizontal: 8,
         paddingVertical: 4,
         borderRadius: R.tag,
-        borderWidth: 1,
-        borderColor: kind === 'alert' ? C.ink : C.smoke,
+        borderWidth: kind === 'warn' ? 2 : 1,
+        borderColor: kind === 'alert' || kind === 'warn' ? C.ink : C.smoke,
         backgroundColor: bg,
       }}>
       <T v="caption" c={kind === 'alert' ? 'paper' : 'ink'}>
@@ -102,6 +102,24 @@ export function SyncStatus() {
       <T v="sub">{pending ? t('syncPending', { n: pending }) : t('syncAllDone')}</T>
       {pending ? <T c="ash">{t('syncWaiting')}</T> : null}
     </View>
+  );
+}
+
+/** A labelled number. Pass onPress to make it open the bills/products behind it. */
+export function Stat({ label, value, note, onPress }: { label: string; value: string; note?: string; onPress?: () => void }) {
+  const body = (
+    <View style={{ gap: 2 }}>
+      <T v="caption" c="ash">{label}</T>
+      <T v="h3">{value}</T>
+      {note ? <T c="ash" style={{ fontSize: 13, lineHeight: 18 }}>{note}</T> : null}
+    </View>
+  );
+  return onPress ? (
+    <Pressable accessibilityRole="button" accessibilityLabel={`${label} ${value}`} onPress={onPress} style={({ pressed }) => ({ flexGrow: 1, flexBasis: 84, opacity: pressed ? 0.7 : 1 })}>
+      {body}
+    </Pressable>
+  ) : (
+    <View style={{ flexGrow: 1, flexBasis: 84 }}>{body}</View>
   );
 }
 
@@ -437,8 +455,8 @@ export function MicrophoneButton({ state, onPress }: { state: MicState; onPress:
 }
 
 // ---------- screen shell ----------
-/** NEW BILL is a tab too, but it starts a sale instead of showing a list — so it is never the active one. */
-export type Tab = 'stock' | 'history' | 'more';
+/** NEW BILL is a tab too, but it starts a sale instead of showing a list — so it is never the active one. `home` highlights nothing. */
+export type Tab = 'home' | 'stock' | 'history' | 'reports' | 'more';
 
 function TabBar({ active }: { active: Tab }) {
   const router = useRouter();
@@ -448,6 +466,7 @@ function TabBar({ active }: { active: Tab }) {
     ['bill', t('newBill'), () => router.replace(`/sale/${actions.startSale()}`)],
     ['stock', t('tabStock'), () => router.replace('/inventory')],
     ['history', t('tabHistory'), () => router.replace('/bills')],
+    ['reports', t('tabReports'), () => router.replace('/reports')],
     ['more', t('more'), () => router.replace('/more')],
   ];
   return (
@@ -471,7 +490,7 @@ function TabBar({ active }: { active: Tab }) {
               borderTopWidth: on ? 3 : 0,
               borderColor: C.ink,
             }}>
-            <T v="btn" style={{ textAlign: 'center', fontSize: 14 }} numberOfLines={2}>
+            <T v="btn" style={{ textAlign: 'center', fontSize: 13, letterSpacing: 0 }} numberOfLines={2}>
               {label}
             </T>
           </Pressable>
@@ -523,13 +542,13 @@ export function Screen({
     <View style={{ flex: 1, backgroundColor: C.paper }}>
       <View style={{ backgroundColor: C.paper, borderBottomWidth: 1, borderColor: C.hairline, paddingTop: insets.top }}>
         <View style={s.bar}>
-          {back ? (
+          {back && tab !== 'home' ? (
             <Pressable
               accessibilityRole="button"
-              accessibilityLabel={t('back')}
-              onPress={() => (router.canGoBack() ? router.back() : router.replace('/'))}
+              accessibilityLabel={tab ? t('home') : t('back')}
+              onPress={() => (tab ? router.replace('/') : router.canGoBack() ? router.back() : router.replace('/'))}
               style={s.back}>
-              <T v="btn">← {t('back')}</T>
+              <T v="btn">← {tab ? t('home') : t('back')}</T>
             </Pressable>
           ) : null}
           <T v="sub" style={{ flex: 1 }} numberOfLines={2}>

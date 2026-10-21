@@ -1,10 +1,10 @@
 import { useLocalSearchParams, useRouter } from 'expo-router';
 import type { ReactNode } from 'react';
-import { View } from 'react-native';
+import { Pressable, View } from 'react-native';
 
-import { Btn, Empty, QuantityStepper, Row, Screen, T } from '@/components/ui';
+import { Btn, Empty, QuantityStepper, Row, Screen, T, Tag } from '@/components/ui';
 import { C } from '@/constants/theme';
-import { fmtMoney, fmtQty, lineTotal, saleTotal, stockStatus, type Product, type SaleItem, type Unit } from '@/lib/engine';
+import { fmtMoney, fmtQty, isActive, lineTotal, saleTotal, stockStatus, type Product, type SaleItem, type Unit } from '@/lib/engine';
 import { useT, useUnit } from '@/lib/i18n';
 import { useApp } from '@/lib/store';
 
@@ -35,24 +35,39 @@ export function useQtyLabel() {
 
 const rowLine = { paddingVertical: 10, borderBottomWidth: 1, borderColor: C.hairline } as const;
 
-/** Compact catalog row: name + size, price, stock; one clear action on the right. */
-export function ProductRow({ p, action, onPress }: { p: Product; action: string; onPress: () => void }) {
+/** Compact catalog row: name + size, price, stock with a worded status; one clear action on the right. */
+export function ProductRow({ p, action, onPress, onOpen }: { p: Product; action: string; onPress: () => void; onOpen?: () => void }) {
   const t = useT();
   const unit = useUnit();
   const qtyLabel = useQtyLabel();
   const st = stockStatus(p);
-  const stock = st === 'OUT' ? t('outOfStock') : `${t('stockLabel')} ${qtyLabel(p.stock, p.unit)}${st === 'LOW' ? ` · ${t('lowStock')}` : ''}`;
+  const text = (
+    <View style={{ flex: 1, gap: 2 }}>
+      <T v="sub" numberOfLines={2}>
+        {p.name}
+        {p.pack ? ` · ${p.pack}` : ''}
+      </T>
+      <T c="ash">
+        {fmtMoney(p.pricePaise)} / {unit(p.unit)}
+      </T>
+      <Row style={{ gap: 8, flexWrap: 'wrap' }}>
+        <T c="ash">
+          {t('stockLabel')} {qtyLabel(p.stock, p.unit)}
+        </T>
+        {st !== 'OK' ? <Tag label={st === 'OUT' ? t('outOfStock') : t('lowStock')} kind={st === 'OUT' ? 'alert' : 'warn'} /> : null}
+        {!isActive(p) ? <Tag label={t('archived')} /> : null}
+      </Row>
+    </View>
+  );
   return (
     <Row style={rowLine}>
-      <View style={{ flex: 1 }}>
-        <T v="sub" numberOfLines={2}>
-          {p.name}
-          {p.pack ? ` · ${p.pack}` : ''}
-        </T>
-        <T c="ash">
-          {fmtMoney(p.pricePaise)} / {unit(p.unit)} · {stock}
-        </T>
-      </View>
+      {onOpen ? (
+        <Pressable accessibilityRole="button" accessibilityLabel={p.name} onPress={onOpen} style={{ flex: 1 }}>
+          {text}
+        </Pressable>
+      ) : (
+        text
+      )}
       <Btn size="sm" kind="outline" label={action} a11y={`${action} ${p.name}`} onPress={onPress} style={{ minWidth: 96 }} />
     </Row>
   );
@@ -93,13 +108,14 @@ export function BillItemRow({
 }
 
 /** Running total + the screen's single primary action, kept in the stable footer. */
-export function BillTotalBar({ items, children }: { items: SaleItem[]; children: ReactNode }) {
+export function BillTotalBar({ items, discountPaise = 0, children }: { items: SaleItem[]; discountPaise?: number; children: ReactNode }) {
   const t = useT();
+  const total = saleTotal(items) - discountPaise;
   return (
     <Row style={{ gap: 16 }}>
-      <View accessible accessibilityLabel={`${t('total')} ${fmtMoney(saleTotal(items))}`}>
+      <View accessible accessibilityLabel={`${t('total')} ${fmtMoney(total)}`}>
         <T v="caption" c="ash">{t('total')} · {t('itemsCount', { n: items.length })}</T>
-        <T v="h2">{fmtMoney(saleTotal(items))}</T>
+        <T v="h2">{fmtMoney(total)}</T>
       </View>
       <View style={{ flex: 1 }}>{children}</View>
     </Row>

@@ -52,7 +52,8 @@
     "web": "expo start --web",
     "lint": "expo lint",
     "test": "jest",
-    "typecheck": "tsc --noEmit"
+    "typecheck": "tsc --noEmit",
+    "check": "node scripts/check-engine.ts && node scripts/check-reports.ts"
   },
   "private": true,
   "jest": {

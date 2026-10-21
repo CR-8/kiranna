@@ -13,10 +13,17 @@ function load(): E.State {
     if (raw) {
       try {
         const s = JSON.parse(raw);
-        if (s?.v === 1) return s as E.State;
+        if (s?.v === 2) return s as E.State;
+        if (s?.v === 1) {
+          const upgraded = E.migrate(s); // v1 → v2 adds purchases, alerts, product dates, ledger kinds
+          localStorage.setItem(KEY + '.v1backup', raw);
+          persist(upgraded);
+          return upgraded;
+        }
       } catch {
-        localStorage.setItem(KEY + '.corrupt', raw); // never overwrite unreadable data silently
+        // fall through to the backup below
       }
+      localStorage.setItem(KEY + '.corrupt', raw); // never overwrite unreadable data silently
     }
   } catch {
     // storage blocked: run in memory only
@@ -82,8 +89,25 @@ export const actions = {
   replaceItem: (saleId: string, itemId: string, productId: string) =>
     commit(E.replaceItem(state, saleId, itemId, productId)),
   discardSale: (saleId: string) => commit(E.discardSale(state, saleId)),
-  confirmSale: (saleId: string, pay: E.PayMethod, override = false) =>
-    commit(E.confirmSale(state, saleId, pay, Date.now(), override)),
+  confirmSale: (saleId: string, pay: E.PayMethod, override = false, discountPaise = 0) =>
+    commit(E.confirmSale(state, saleId, pay, Date.now(), override, discountPaise)),
+  voidSale: (saleId: string, reason: string) => commit(E.voidSale(state, saleId, reason, Date.now())),
+  adjustStock: (productId: string, delta: number, kind: 'damage' | 'adjust' | 'return', reason: string) =>
+    commit(E.adjustStock(state, productId, delta, kind, reason, Date.now())),
+  updateProduct: (productId: string, patch: E.ProductPatch) => commit(E.updateProduct(state, productId, patch, Date.now())),
+  setAlert: (productId: string, mode: 'dismiss' | 'snooze' | 'clear', days?: number) =>
+    commit(E.setAlert(state, productId, mode, Date.now(), days)),
+  addToList: (productId: string, qty: number) => {
+    const r = E.addToList(state, productId, qty, Date.now());
+    commit(r.state);
+    return r.id;
+  },
+  setLineQty: (purchaseId: string, lineId: string, qty: number) => commit(E.setLineQty(state, purchaseId, lineId, qty)),
+  removeLine: (purchaseId: string, lineId: string) => commit(E.removeLine(state, purchaseId, lineId)),
+  markOrdered: (purchaseId: string) => commit(E.markOrdered(state, purchaseId, Date.now())),
+  cancelPurchase: (purchaseId: string) => commit(E.cancelPurchase(state, purchaseId, Date.now())),
+  receive: (purchaseId: string, receiptId: string, lines: { lineId: string; qty: number; costPaise?: number }[]) =>
+    commit(E.receivePurchase(state, purchaseId, receiptId, lines, Date.now())),
   addProduct: (input: E.NewProduct) => {
     const r = E.addProduct(state, input, Date.now());
     commit(r.state);
