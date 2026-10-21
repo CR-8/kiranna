@@ -1,98 +1,89 @@
-import * as Device from 'expo-device';
-import { Platform, StyleSheet } from 'react-native';
-import { SafeAreaView } from 'react-native-safe-area-context';
+import { useRouter, type Href } from 'expo-router';
+import { useState } from 'react';
+import { Pressable, View } from 'react-native';
 
-import { AnimatedIcon } from '@/components/animated-icon';
-import { HintRow } from '@/components/hint-row';
-import { ThemedText } from '@/components/themed-text';
-import { ThemedView } from '@/components/themed-view';
-import { WebBadge } from '@/components/web-badge';
-import { BottomTabInset, MaxContentWidth, Spacing } from '@/constants/theme';
+import { Btn, Card, Row, Screen, T, useOffline } from '@/components/ui';
+import { C, R } from '@/constants/theme';
+import { fmtMoney, openDrafts, pendingEvents, todaySummary } from '@/lib/engine';
+import { useT } from '@/lib/i18n';
+import { actions, useApp } from '@/lib/store';
 
-function getDevMenuHint() {
-  if (Platform.OS === 'web') {
-    return <ThemedText type="small">use browser devtools</ThemedText>;
-  }
-  if (Device.isDevice) {
-    return (
-      <ThemedText type="small">
-        shake device or press <ThemedText type="code">m</ThemedText> in terminal
-      </ThemedText>
-    );
-  }
-  const shortcut = Platform.OS === 'android' ? 'cmd+m (or ctrl+m)' : 'cmd+d';
+function Action({ n, title, hint, to, primary }: { n: string; title: string; hint: string; to: () => void; primary?: boolean }) {
   return (
-    <ThemedText type="small">
-      press <ThemedText type="code">{shortcut}</ThemedText>
-    </ThemedText>
+    <Pressable
+      accessibilityRole="button"
+      accessibilityLabel={title}
+      onPress={to}
+      style={({ pressed }) => ({
+        flexGrow: 1,
+        flexBasis: 300,
+        minHeight: 150,
+        padding: 20,
+        gap: 8,
+        justifyContent: 'space-between',
+        borderRadius: R.card,
+        borderWidth: 1,
+        borderColor: primary ? C.ink : C.hairline,
+        backgroundColor: primary ? C.accent : C.paper,
+        opacity: pressed ? 0.8 : 1,
+      })}>
+      <T v="caption" c={primary ? 'ink' : 'ash'}>{n}</T>
+      <View style={{ gap: 4 }}>
+        <T v="h2">{title}</T>
+        <T c={primary ? 'ink' : 'ash'}>{hint}</T>
+      </View>
+    </Pressable>
   );
 }
 
-export default function HomeScreen() {
+function Metric({ label, value }: { label: string; value: string }) {
   return (
-    <ThemedView style={styles.container}>
-      <SafeAreaView style={styles.safeArea}>
-        <ThemedView style={styles.heroSection}>
-          <AnimatedIcon />
-          <ThemedText type="title" style={styles.title}>
-            Welcome to&nbsp;Expo
-          </ThemedText>
-        </ThemedView>
-
-        <ThemedText type="code" style={styles.code}>
-          get started
-        </ThemedText>
-
-        <ThemedView type="backgroundElement" style={styles.stepContainer}>
-          <HintRow
-            title="Try editing"
-            hint={<ThemedText type="code">src/app/index.tsx</ThemedText>}
-          />
-          <HintRow title="Dev tools" hint={getDevMenuHint()} />
-          <HintRow
-            title="Fresh start"
-            hint={<ThemedText type="code">npm run reset-project</ThemedText>}
-          />
-        </ThemedView>
-
-        {Platform.OS === 'web' && <WebBadge />}
-      </SafeAreaView>
-    </ThemedView>
+    <View style={{ flexGrow: 1, flexBasis: 120, gap: 2 }}>
+      <T v="caption" c="ash">{label}</T>
+      <T v="h3" c="paper">{value}</T>
+    </View>
   );
 }
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    justifyContent: 'center',
-    flexDirection: 'row',
-  },
-  safeArea: {
-    flex: 1,
-    paddingHorizontal: Spacing.four,
-    alignItems: 'center',
-    gap: Spacing.three,
-    paddingBottom: BottomTabInset + Spacing.three,
-    maxWidth: MaxContentWidth,
-  },
-  heroSection: {
-    alignItems: 'center',
-    justifyContent: 'center',
-    flex: 1,
-    paddingHorizontal: Spacing.four,
-    gap: Spacing.four,
-  },
-  title: {
-    textAlign: 'center',
-  },
-  code: {
-    textTransform: 'uppercase',
-  },
-  stepContainer: {
-    gap: Spacing.three,
-    alignSelf: 'stretch',
-    paddingHorizontal: Spacing.three,
-    paddingVertical: Spacing.four,
-    borderRadius: Spacing.four,
-  },
-});
+export default function Home() {
+  const t = useT();
+  const router = useRouter();
+  const app = useApp();
+  const offline = useOffline();
+  const [now] = useState(Date.now); // fixed at mount: "today" only matters when the screen opens
+  const today = todaySummary(app, now);
+  const go = (href: Href) => () => router.push(href);
+
+  const newBill = () => router.push(`/sale/${actions.startSale()}`);
+
+  return (
+    <Screen title={t('appName')} back={false}>
+      <T v="h1">{app.shopName}</T>
+
+      {offline ? (
+        <Card wash>
+          <T v="sub">{t('offlineBanner')}</T>
+        </Card>
+      ) : null}
+
+      <View style={{ backgroundColor: C.obsidian, borderRadius: R.card, padding: 20, flexDirection: 'row', flexWrap: 'wrap', gap: 16 }}>
+        <Metric label={t('todaysSales')} value={fmtMoney(today.totalPaise)} />
+        <Metric label={t('billsToday')} value={String(today.billCount)} />
+        <Metric label={t('openSales')} value={String(openDrafts(app).length)} />
+        <Metric label={t('pendingChanges')} value={String(pendingEvents(app))} />
+      </View>
+
+      <View style={{ flexDirection: 'row', flexWrap: 'wrap', gap: 16 }}>
+        <Action n="01" title={t('newBill')} hint={t('newBillHint')} to={newBill} primary />
+        <Action n="02" title={t('stock')} hint={t('stockHint')} to={go('/inventory')} />
+        <Action n="03" title={t('history')} hint={t('historyHint')} to={go('/bills')} />
+        <Action n="04" title={t('sync')} hint={t('syncHint')} to={go('/sync')} />
+      </View>
+
+      <Row>
+        <Btn kind="outline" label={t('todaysSales')} onPress={go('/today')} style={{ flex: 1 }} />
+        <Btn kind="outline" label={t('settings')} onPress={go('/settings')} style={{ flex: 1 }} />
+      </Row>
+    </Screen>
+  );
+}
